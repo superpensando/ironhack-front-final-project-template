@@ -1,6 +1,8 @@
 .main__wrapper {
    width:900px;
-   height:700px;
+   height:650px;
    background-color: var(--color-background-secondary);
    border-radius:var(--border-radius);
+   padding: toRem(64px);
+   margin: 10px toRem(50px);
 }
