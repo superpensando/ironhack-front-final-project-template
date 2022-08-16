@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [ {
   path: '/auth',
   name: 'root',
-  component: () => import(/* webpackChunkName: 'index' */ './../pages/login.vue'),
+  component: () => import(/* webpackChunkName: 'index' */ './../pages/Login.vue'),
 },];
 
 const router = createRouter({
