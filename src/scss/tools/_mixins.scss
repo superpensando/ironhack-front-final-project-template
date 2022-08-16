@@ -1,8 +1,10 @@
 $html-font-size: 16; //16px
 
+@use "sass:math";
+
 @function toRem($value) {
 
-    $remValue: calc(#{$value}, #{$html-font-size}) + rem;
+    $remValue: math.div($value, $html-font-size) + rem;
   
     @return $remValue;
   
