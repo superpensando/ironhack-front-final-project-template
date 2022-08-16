@@ -1,5 +1,7 @@
 <template>
-  LOGIN PAGE
+  <section class="main__wrapper">
+
+  </section>
 </template>
 
 <script>

@@ -1,7 +1,5 @@
 <template>
-  <section>
     <router-view class="app-main" />
-  </section>
 </template>
 
 <script setup>
