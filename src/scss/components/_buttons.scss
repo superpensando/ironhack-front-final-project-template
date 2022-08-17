@@ -1,0 +1,9 @@
+.auth__form-button {
+    border-radius: var(--border-radius);
+    border:none;
+    background-color: var(--color-brand-primary);
+    padding:toRem(20);
+    color:var(--color-text-primary);
+    font-size:toRem(20);
+    cursor: pointer;
+}

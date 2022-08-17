@@ -1,8 +1,20 @@
 .main__wrapper {
+   position:relative;
    width:900px;
-   height:650px;
+   height:600px;
    background-color: var(--color-background-secondary);
    border-radius:var(--border-radius);
    padding: toRem(64);
    margin: toRem(10) toRem(50);
 }
+.main__wrapper-decoration {
+   position:absolute;
+   bottom:toRem(100);
+   right:toRem(100);
+   width:toRem(100);
+}
+
+.auth__wrapper {
+   width:50%;
+   padding:toRem(20);
+ }

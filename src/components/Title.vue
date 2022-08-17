@@ -1,5 +1,5 @@
 <template>
-  <h2>Log in</h2>
+  <h2 class="main__title">Log in</h2>
 </template>
 
 <script>
