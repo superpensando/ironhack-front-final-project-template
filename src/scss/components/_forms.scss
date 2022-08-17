@@ -9,6 +9,7 @@
 
 .auth__form-element {
     border:none;
+    width:100%;
     padding:toRem(20);
     background-color: var(--color-background-primary);
     border-radius:var(--border-radius);
@@ -41,4 +42,10 @@
 .auth__form-element:-ms-input-placeholder {
     /* Internet Explorer 10+ */
     color: var(--color-text-primary);
+}
+
+.auth__form-msg {
+    color:var(--color-text-error);
+    font-size:toRem(14);
+    padding:0 toRem(10);
 }
