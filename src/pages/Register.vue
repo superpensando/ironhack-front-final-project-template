@@ -36,7 +36,9 @@
           placeholder="Confirm Password"
           required
         />
-        <p class="auth__form-msg" v-if="msg.confirmPassword">{{ msg.confirmPassword }}</p>
+        <p class="auth__form-msg" v-if="msg.confirmPassword">
+          {{ msg.confirmPassword }}
+        </p>
       </fieldset>
 
       <button class="auth__form-button" type="submit">Submit</button>
@@ -47,6 +49,8 @@
 
 <script>
 import { useUserStore } from "../store/user.js";
+import { useRouter } from "vue-router";
+
 export default {
   data() {
     return {
@@ -54,6 +58,9 @@ export default {
       password: "",
       confirmPassword: "",
       msg: [],
+      router: useRouter(),
+      userStore:useUserStore(),
+
     };
   },
   watch: {
@@ -63,9 +70,9 @@ export default {
     password(value) {
       this.validatePassword(value);
     },
-    confirmPassword(value){
+    confirmPassword(value) {
       this.validateConfirmPassword(value);
-    }
+    },
   },
   methods: {
     validateEmail(value) {
@@ -84,16 +91,25 @@ export default {
         this.msg["password"] = "";
       }
     },
-    validateConfirmPassword(value){
-        if (this.password !== this.confirmPassword) {
-          this.msg["confirmPassword"] = "The passwords are not equals"
-        } else {
-           this.msg["confirmPassword"] = "";
-        }
-
+    validateConfirmPassword(value) {
+      if (this.password !== this.confirmPassword) {
+        this.msg["confirmPassword"] = "The passwords are not equals";
+      } else {
+        this.msg["confirmPassword"] = "";
+      }
     },
-    submit() {
-      console.log(`Email: ${this.email} Password: ${this.password}`);
+    async submit() {
+      if (this.password && this.email && this.confirmPassword) {
+        try {
+          await this.userStore.signUp(
+            this.email,
+            this.password,
+          );
+          router.push({ path: "/auth" });
+        } catch (e) {
+          console.log("error SignUp");
+        }
+      }
     },
   },
 };
