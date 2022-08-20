@@ -12,7 +12,7 @@
           placeholder="Email"
           required
         />
-        <p class="auth__form-msg" v-if="msg.email">{{ msg.email }}</p>
+        <p class="auth__form-error" v-if="msg.email">{{ msg.email }}</p>
       </fieldset>
       <fieldset class="auth__fieldset">
         <input
@@ -24,7 +24,7 @@
           placeholder="Password"
           required
         />
-        <p class="auth__form-msg" v-if="msg.password">{{ msg.password }}</p>
+        <p class="auth__form-error" v-if="msg.password">{{ msg.password }}</p>
       </fieldset>
       <fieldset class="auth__fieldset">
         <input
@@ -36,7 +36,7 @@
           placeholder="Confirm Password"
           required
         />
-        <p class="auth__form-msg" v-if="msg.confirmPassword">
+        <p class="auth__form-error" v-if="msg.confirmPassword">
           {{ msg.confirmPassword }}
         </p>
       </fieldset>
@@ -107,7 +107,7 @@ export default {
           );
           router.push({ path: "/auth" });
         } catch (e) {
-          console.log("error SignUp");
+          console.log("error Register/SignUp");
         }
       }
     },
