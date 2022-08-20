@@ -12,7 +12,9 @@
           placeholder="Email"
           required
         />
-        <p class="auth__form-messages error" v-if="msgForm.email">{{ msgForm.email }}</p>
+        <p class="auth__form-messages error" v-if="msgForm.email">
+          {{ msgForm.email }}
+        </p>
       </fieldset>
       <fieldset class="auth__fieldset">
         <input
@@ -24,7 +26,9 @@
           placeholder="Password"
           required
         />
-        <p class="auth__form-messages error" v-if="msgForm.password">{{ msgForm.password }}</p>
+        <p class="auth__form-messages error" v-if="msgForm.password">
+          {{ msgForm.password }}
+        </p>
       </fieldset>
       <fieldset class="auth__fieldset">
         <input
@@ -43,17 +47,18 @@
 
       <button class="auth__form-button" type="submit">Submit</button>
     </form>
-    <div v-if="msgErrors.length>0" class="bbdd__messages error">
-      {{ msgErrors[0].message }} <br/> {{ msgErrors[0].status }}
+    <div v-if="msgErrors.length > 0" class="bbdd__messages error">
+      {{ msgErrors[0].message }} <br />
+      {{ msgErrors[0].status }}
     </div>
 
     <router-link class="auth__link" :to="'/'">Click to LogIn</router-link>
   </div>
   <div class="auth__wrapper">
-        <div v-if="msgInfo.length>0">
-         <h3 class="main__subtitle"> {{ msgInfo[0].title}}</h3>
-         <p>{{ msgInfo[0].body}}</p>
-      </div>
+    <div v-if="msgInfo.length > 0">
+      <h3 class="main__subtitle">{{ msgInfo[0].title }}</h3>
+      <p>{{ msgInfo[0].body }}</p>
+    </div>
   </div>
 </template>
 
@@ -67,12 +72,11 @@ export default {
       email: "",
       password: "",
       confirmPassword: "",
-      msgErrors:[],
-      msgInfo:[],
+      msgErrors: [],
+      msgInfo: [],
       msgForm: [],
       router: useRouter(),
-      userStore:useUserStore(),
-
+      userStore: useUserStore(),
     };
   },
   watch: {
@@ -113,19 +117,15 @@ export default {
     async submit() {
       if (this.password && this.email && this.confirmPassword) {
         try {
-          await this.userStore.signUp(
-            this.email,
-            this.password,
-          );
+          await this.userStore.signUp(this.email, this.password);
           this.msgInfo.push({
-             "title":'You have registered!',
-             "body":'To complete the process, you will have received a confirmation email. Please accept the email.'
-          });       
-         setTimeout(() => {
-              this.router.push({ path: "/" });
+            title: "You have registered!",
+            body: "To complete the process, you will have received a confirmation email. Please accept the email.",
+          });
+          setTimeout(() => {
+            this.router.push({ path: "/" });
           }, 4000);
-          
-       } catch (e) {
+        } catch (e) {
           this.msgErrors.push(e);
         }
       }

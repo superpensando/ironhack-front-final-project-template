@@ -1,5 +1,5 @@
 <template>
- <div class="auth__wrapper">
+  <div class="auth__wrapper">
     <h2 class="main__title">Log in</h2>
     <form class="auth__form" @submit.prevent="submit">
       <fieldset class="auth__fieldset">
@@ -12,7 +12,9 @@
           placeholder="Email"
           required
         />
-        <p class="auth__form-messages error" v-if="msgForm.email">{{ msgForm.email }}</p>
+        <p class="auth__form-messages error" v-if="msgForm.email">
+          {{ msgForm.email }}
+        </p>
       </fieldset>
       <fieldset class="auth__fieldset">
         <input
@@ -24,15 +26,20 @@
           placeholder="Password"
           required
         />
-        <p class="auth__form-messages error" v-if="msgForm.password">{{ msgForm.password }}</p>
+        <p class="auth__form-messages error" v-if="msgForm.password">
+          {{ msgForm.password }}
+        </p>
       </fieldset>
 
       <button class="auth__form-button" type="submit">Submit</button>
     </form>
-      <div v-if="msgErrors.length>0" class="bbdd__messages error">
-      {{ msgErrors[0].message }} <br/> {{ msgErrors[0].status }}
+    <div v-if="msgErrors.length > 0" class="bbdd__messages error">
+      {{ msgErrors[0].message }} <br />
+      {{ msgErrors[0].status }}
     </div>
-    <router-link class="auth__link" :to="'/register/'">Click to Register</router-link>
+    <router-link class="auth__link" :to="'/register/'"
+      >Click to Register</router-link
+    >
   </div>
 </template>
 
@@ -46,10 +53,9 @@ export default {
       email: "",
       password: "",
       msgForm: [],
-      msgErrors:[],
+      msgErrors: [],
       router: useRouter(),
-      userStore:useUserStore(),
-
+      userStore: useUserStore(),
     };
   },
   watch: {
@@ -59,7 +65,7 @@ export default {
     password(value) {
       this.validatePassword(value);
     },
-  }, 
+  },
   methods: {
     validateEmail(value) {
       if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
@@ -78,21 +84,17 @@ export default {
       }
     },
     async submit() {
-     if (this.password && this.email) {
+      if (this.password && this.email) {
         try {
-          await this.userStore.signIn(
-            this.email,
-            this.password,
-          );
-          this.router.push({ path: "/dashboard" }); 
+          await this.userStore.signIn(this.email, this.password);
+          this.router.push({ path: "/dashboard" });
         } catch (e) {
           this.msgErrors.push(e);
         }
       }
     },
   },
-
-}
+};
 </script>
 
 <style>
