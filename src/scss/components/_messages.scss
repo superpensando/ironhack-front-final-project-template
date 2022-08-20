@@ -1,0 +1,23 @@
+.auth__form-messages {
+    color:var(--color-error-primary);
+    font-size:toRem(14);
+    padding:0 toRem(10);
+
+    &.error {
+        color: var(--color-error-primary);
+    }
+
+}
+.bbdd__messages {
+    
+    font-size:toRem(12);
+    padding:toRem(10);
+    margin:toRem(20) 0;
+    width: 100%;
+    text-align: center;
+
+    &.error {
+        background-color: var(--color-error-primary);
+        color: var(--color-text-primary);
+    }
+}
