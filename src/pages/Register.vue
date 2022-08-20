@@ -105,7 +105,7 @@ export default {
             this.email,
             this.password,
           );
-          router.push({ path: "/" });
+          this.router.push({ path: "/" });
         } catch (e) {
           console.log("error Register/SignUp");
         }
