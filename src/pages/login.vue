@@ -12,7 +12,7 @@
           placeholder="Email"
           required
         />
-        <p class="auth__form-error" v-if="msgForm.email">{{ msgForm.email }}</p>
+        <p class="auth__form-messages error" v-if="msgForm.email">{{ msgForm.email }}</p>
       </fieldset>
       <fieldset class="auth__fieldset">
         <input
@@ -24,13 +24,13 @@
           placeholder="Password"
           required
         />
-        <p class="auth__form-error" v-if="msgForm.password">{{ msgForm.password }}</p>
+        <p class="auth__form-messages error" v-if="msgForm.password">{{ msgForm.password }}</p>
       </fieldset>
 
       <button class="auth__form-button" type="submit">Submit</button>
     </form>
-    <div v-show="msgErrors.length>0" class="bbdd__error">
-      {{ msgErrors }}
+      <div v-if="msgErrors.length>0" class="bbdd__messages error">
+      {{ msgErrors[0].message }} <br/> {{ msgErrors[0].status }}
     </div>
     <router-link class="auth__link" :to="'/register/'">Click to Register</router-link>
   </div>
@@ -86,7 +86,7 @@ export default {
           );
           this.router.push({ path: "/dashboard" }); 
         } catch (e) {
-          this.msgErrors.push("message:"+e.message + "& status:" +e.status);
+          this.msgErrors.push(e);
         }
       }
     },
