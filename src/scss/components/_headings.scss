@@ -8,3 +8,9 @@
         margin-top: toRem(100);
     }
 }
+.main__subtitle {
+    font-size: toRem(30);
+    & + * {
+        margin-top: toRem(30);
+    }
+}

@@ -12,7 +12,7 @@
           placeholder="Email"
           required
         />
-        <p class="auth__form-error" v-if="msg.email">{{ msg.email }}</p>
+        <p class="auth__form-messages error" v-if="msgForm.email">{{ msgForm.email }}</p>
       </fieldset>
       <fieldset class="auth__fieldset">
         <input
@@ -24,7 +24,7 @@
           placeholder="Password"
           required
         />
-        <p class="auth__form-error" v-if="msg.password">{{ msg.password }}</p>
+        <p class="auth__form-messages error" v-if="msgForm.password">{{ msgForm.password }}</p>
       </fieldset>
       <fieldset class="auth__fieldset">
         <input
@@ -36,14 +36,24 @@
           placeholder="Confirm Password"
           required
         />
-        <p class="auth__form-error" v-if="msg.confirmPassword">
-          {{ msg.confirmPassword }}
+        <p class="auth__form-messages error" v-if="msgForm.confirmPassword">
+          {{ msgForm.confirmPassword }}
         </p>
       </fieldset>
 
       <button class="auth__form-button" type="submit">Submit</button>
     </form>
+    <div v-if="msgErrors.length>0" class="bbdd__messages error">
+      {{ msgErrors[0].message }} <br/> {{ msgErrors[0].status }}
+    </div>
+
     <router-link class="auth__link" :to="'/'">Click to LogIn</router-link>
+  </div>
+  <div class="auth__wrapper">
+        <div v-if="msgInfo.length>0">
+         <h3 class="main__subtitle"> {{ msgInfo[0].title}}</h3>
+         <p>{{ msgInfo[0].body}}</p>
+      </div>
   </div>
 </template>
 
@@ -57,7 +67,9 @@ export default {
       email: "",
       password: "",
       confirmPassword: "",
-      msg: [],
+      msgErrors:[],
+      msgInfo:[],
+      msgForm: [],
       router: useRouter(),
       userStore:useUserStore(),
 
@@ -77,25 +89,25 @@ export default {
   methods: {
     validateEmail(value) {
       if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
-        this.msg["email"] = "";
+        this.msgForm["email"] = "";
       } else {
-        this.msg["email"] = "Invalid Email Address";
+        this.msgForm["email"] = "Invalid Email Address";
       }
     },
     validatePassword(value) {
       let difference = 8 - value.length;
       if (value.length < 8) {
-        this.msg["password"] =
+        this.msgForm["password"] =
           "Must be 8 characters! " + difference + " characters left";
       } else {
-        this.msg["password"] = "";
+        this.msgForm["password"] = "";
       }
     },
     validateConfirmPassword(value) {
       if (this.password !== this.confirmPassword) {
-        this.msg["confirmPassword"] = "The passwords are not equals";
+        this.msgForm["confirmPassword"] = "The passwords are not equals";
       } else {
-        this.msg["confirmPassword"] = "";
+        this.msgForm["confirmPassword"] = "";
       }
     },
     async submit() {
@@ -105,9 +117,16 @@ export default {
             this.email,
             this.password,
           );
-          this.router.push({ path: "/" });
-        } catch (e) {
-          console.log("error Register/SignUp");
+          this.msgInfo.push({
+             "title":'You have registered!',
+             "body":'To complete the process, you will have received a confirmation email. Please accept the email.'
+          });       
+         setTimeout(() => {
+              this.router.push({ path: "/" });
+          }, 4000);
+          
+       } catch (e) {
+          this.msgErrors.push(e);
         }
       }
     },
