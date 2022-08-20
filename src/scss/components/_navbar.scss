@@ -1,0 +1,18 @@
+.navbar {
+    width:100%;
+}
+.navbar__list {
+    display: flex;
+    justify-content: space-between;
+}
+.navbar__link {
+    font-size:inherit;
+    color:var(--color-brand-primary);
+    text-decoration: none;
+    background-color: transparent;
+    border:none; 
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}

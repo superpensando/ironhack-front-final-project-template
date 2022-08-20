@@ -1,7 +1,7 @@
-.auth__link {
-    display:inline-block;
-    width:100%; 
-    text-align: center;
-    margin: toRem(40) 0; 
+a,a:visited,a:focus {
     color:var(--color-brand-primary);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }

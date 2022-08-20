@@ -44,3 +44,11 @@
     color: var(--color-text-primary);
 }
 
+.auth__link {
+    display:inline-block;
+    width:100%; 
+    text-align: center;
+    margin: toRem(40) 0; 
+    color:var(--color-brand-primary);
+}
+
