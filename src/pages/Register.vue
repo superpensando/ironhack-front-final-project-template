@@ -43,7 +43,7 @@
 
       <button class="auth__form-button" type="submit">Submit</button>
     </form>
-    <router-link class="auth__link" :to="'/auth/'">Click to LogIn</router-link>
+    <router-link class="auth__link" :to="'/'">Click to LogIn</router-link>
   </div>
 </template>
 
@@ -105,7 +105,7 @@ export default {
             this.email,
             this.password,
           );
-          router.push({ path: "/auth" });
+          router.push({ path: "/" });
         } catch (e) {
           console.log("error Register/SignUp");
         }
