@@ -8,4 +8,27 @@ $html-font-size: 16; //16px
   
     @return $remValue;
   
+}
+
+@mixin ripped-effect($rhythm, $depth) {
+  $tip: calc(100% - #{$depth});
+  $ripped: '100% 0, 100% #{$tip}, ';
+  $end: 100 - $rhythm;
+  $isPrevTip: true;
+
+  @for $i from $end through 1 {
+    @if $i % $rhythm == 0 {
+      @if $isPrevTip {
+        $ripped: #{$ripped + $i + '% 100%, '};
+        $isPrevTip: false;
+      } @else {
+        $ripped: #{$ripped + $i + '% #{$tip}, '};
+        $isPrevTip: true;
+      }
+    }
   }
+
+  $ripped: #{$ripped + '0 #{$tip}, 0 0'};
+
+  clip-path: polygon($ripped);
+}

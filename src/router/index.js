@@ -16,6 +16,11 @@ const routes = [
     name: 'dashbaord',
     component: () => import(/* webpackChunkName: 'index' */ './../pages/Dashboard.vue'),
   },
+  {
+    path: '/newtask',
+    name: 'newtask',
+    component: () => import(/* webpackChunkName: 'index' */ './../pages/NewTask.vue'),
+  },
 ];
 
 const router = createRouter({

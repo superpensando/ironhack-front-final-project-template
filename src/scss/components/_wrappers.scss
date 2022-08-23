@@ -1,6 +1,7 @@
 .main__wrapper {
    position:relative;
    display: flex;
+   flex-direction: column;
    width:900px;
    height:100%;
    min-height:600px;
@@ -23,4 +24,15 @@
    &:nth-child(2) {
       text-align: right;
    }
+ }
+
+ .tasks__wrapper {
+   padding:toRem(20);
+ }
+
+ .newtasks__wrapper {
+   position: relative;
+   padding:toRem(20);
+   background: #fff;
+   @include ripped-effect(2, 6px);
  }

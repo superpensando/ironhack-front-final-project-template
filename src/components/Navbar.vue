@@ -2,12 +2,13 @@
   <nav class="navbar">
     <ul class="navbar__list">
       <li class="navbar__item">
-        <h2 class="main__title">Dashboard</h2>
+        <h2 class="main__title">{{ pageTitle }}</h2>
       </li>
       <li class="navbar__item">
-        <button class="navbar__link" type="button" @click="signOut">
-          Log out
+        <button v-if="pageTitle == 'Dashboard'" class="navbar__link" type="button" @click="signOut">
+          {{ pageLink }}
         </button>
+        <router-link v-if="pageTitle == 'New Task'" class="tasks__link" :to="'/dashboard'">Back</router-link>
       </li>
     </ul>
   </nav>
@@ -19,6 +20,10 @@ import { useRouter } from "vue-router";
 
 export default {
   name: "Navbar",
+  props: {
+        pageTitle: String,
+        pageLink: String,
+  },
   data() {
     return {
       msgErrors: [],

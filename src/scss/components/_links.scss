@@ -5,3 +5,18 @@ a,a:visited,a:focus {
 a:hover {
     text-decoration: underline;
 }
+
+.auth__link {
+    display:inline-block;
+    width:100%; 
+    text-align: center;
+    margin: toRem(40) 0; 
+    color:var(--color-brand-primary);
+}
+
+.tasks__link {
+    display:inline-block;
+    width:100%; 
+    margin: toRem(20) 0; 
+    color:var(--color-brand-primary);
+}
