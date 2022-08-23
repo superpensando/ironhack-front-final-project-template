@@ -1,8 +1,28 @@
+//-------------------
+// ITCSS Architecture
+//
+//  Pre-processors Layer:
+//      -Setting: Variables and configuration (styleguide,breakpoints...)
+//      -Tools: Mixins and functions 
+//  CSS Layer:
+//      -Generic: General css adjusts (Resets, normalize, scaffolding ...)
+//      -Components
+//      -Utilities: Overrides, Shame and Helpers code  with ability to override anything.
+//       IT's the only place where the !important is allowed!
+//          _shame.scss (  Quick-fixes, horrible-fixes that need to be refactored in the future)
+//          _trumps.scss (Generic Helpers)
+//
+//-------------------
+
+//Settings
 @import 'scss/settings/variables';
+//Tools
 @import 'scss/tools/mixins';
+//Generic
 @import 'scss/generic/reset';
 @import 'scss/generic/fonts';
 @import 'scss/generic/scaffolding';
+//Components
 @import 'scss/components/wrappers';
 @import 'scss/components/headings';
 @import 'scss/components/forms';
