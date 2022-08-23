@@ -4,7 +4,7 @@
     <form class="auth__form" @submit.prevent="submit">
       <fieldset class="auth__fieldset">
         <input
-          class="auth__form-element form-email"
+          class="auth__form-element"
           v-model="email"
           type="email"
           name="email"
@@ -19,7 +19,7 @@
       <fieldset class="auth__fieldset">
         <input
           v-model="password"
-          class="auth__form-element form-password"
+          class="auth__form-element"
           type="password"
           name="password"
           id="password"
