@@ -12,7 +12,7 @@
     width:100%;
     padding:toRem(20);
     background-color: var(--color-background-primary);
-    border-radius:var(--border-radius);
+    border-radius:var(--border-radius-primary);
     color:var(--color-text-primary);
     font-size:toRem(20);
     outline:none;
@@ -42,5 +42,17 @@
 .auth__form-element:-ms-input-placeholder {
     /* Internet Explorer 10+ */
     color: var(--color-text-primary);
+}
+
+.newTask__form-element {
+    border:none;
+    width:100%;
+    padding:toRem(18);
+    background-color: transparent;
+    outline:none;
+    font-size: toRem(20);
+    &#taskTitle {
+        text-transform: uppercase;
+    }
 }
 

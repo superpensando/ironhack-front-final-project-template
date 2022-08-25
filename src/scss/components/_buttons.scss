@@ -1,9 +1,20 @@
 .auth__form-button {
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-primary);
     border:none;
     background-color: var(--color-brand-primary);
     padding:toRem(20);
     color:var(--color-text-primary);
     font-size:toRem(20);
+    cursor: pointer;
+}
+
+.newTask__form-button {
+    border-radius: var(--border-radius-secondary);
+    border:none;
+    background-color: var(--color-brand-primary);
+    padding:toRem(5) toRem(10);
+    color:var(--color-text-primary);
+    font-size:toRem(20);
+    float:right;
     cursor: pointer;
 }
