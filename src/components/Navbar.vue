@@ -3,15 +3,16 @@
     <ul class="navbar__list">
       <li class="navbar__item">
         <h2 class="main__title">{{ pageTitle }}</h2>
-      </li>
+     </li>
       <li class="navbar__item">
         <button v-if="pageTitle == 'Dashboard'" class="navbar__link" type="button" @click="signOut">
           {{ pageLink }}
-        </button>
+        </button>          
         <router-link v-if="pageTitle == 'New Task'" class="tasks__link" :to="'/dashboard'">Back</router-link>
       </li>
     </ul>
   </nav>
+  <p class="main__user"> {{ this.userStore.user.email}} </p>  
 </template>
 
 <script>
