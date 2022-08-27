@@ -7,13 +7,13 @@
    min-height:600px;
    background-color: var(--color-background-secondary);
    border-radius:var(--border-radius-primary);
-   padding: toRem(64);
+   padding: toRem(48);
    margin: toRem(10) toRem(50);
 }
 
 .wrapper__main-decoration {
    position:absolute;
-   bottom:toRem(100);
+   bottom:toRem(80);
    right:toRem(100);
    width:toRem(70);
 }

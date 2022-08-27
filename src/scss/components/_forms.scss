@@ -38,7 +38,7 @@
 .tasks__form-element {
     border: none;
     width: 100%;
-    padding: toRem(18);
+    padding: toRem(8) toRem(40);
     background-color: transparent;
     outline: none;
     font-size: toRem(20);
@@ -55,7 +55,7 @@
 }
 .tasks__form-element-icon {
   position:absolute;
-  top:toRem(8);
-  left:toRem(-24);
+  top:0;
+  left:toRem(2);
 
 }
