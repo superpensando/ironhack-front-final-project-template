@@ -1,58 +1,55 @@
 .auth__form {
-    display:flex;
+    display: flex;
     flex-direction: column;
 
-    > * + * {
+    >*+* {
         margin-top: toRem(30);
-    };
+    }
+
+    ;
 }
+
 
 .auth__form-element {
-    border:none;
-    width:100%;
-    padding:toRem(20);
+    border: none;
+    width: 100%;
+    padding: toRem(20);
     background-color: var(--color-background-primary);
-    border-radius:var(--border-radius-primary);
-    color:var(--color-text-primary);
-    font-size:toRem(20);
-    outline:none;
-    border:1px solid var(--color-background-primary);
-    &:hover, &:active, &:focus {
-        border:1px solid var(--color-brand-primary);
-    }
-}
-
-.auth__form-element::-webkit-input-placeholder {
-    /* WebKit browsers */
+    border-radius: var(--border-radius-primary);
     color: var(--color-text-primary);
-}
-
-.auth__form-element:-moz-placeholder {
-    /* Mozilla Firefox 4 - 18 */
-    color: var(--color-text-primary);
-    opacity: 1;
-}
-
-.auth__form-element::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
-    color: var(--color-text-primary);
-    opacity: 1;
-}
-
-.auth__form-element:-ms-input-placeholder {
-    /* Internet Explorer 10+ */
-    color: var(--color-text-primary);
-}
-
-.newTask__form-element {
-    border:none;
-    width:100%;
-    padding:toRem(18);
-    background-color: transparent;
-    outline:none;
     font-size: toRem(20);
-    &#taskTitle {
-        text-transform: uppercase;
+    outline: none;
+    border: 1px solid var(--color-background-primary);
+
+    &:hover,
+    &:active,
+    &:focus {
+        border: 1px solid var(--color-brand-primary);
+    }
+
+    &::-webkit-input-placeholder {
+        color: var(--color-text-primary);
+        font-style: italic;
+        font-weight: 100;
     }
 }
 
+
+.tasks__form-element {
+    border: none;
+    width: 100%;
+    padding: toRem(18);
+    background-color: transparent;
+    outline: none;
+    font-size: toRem(20);
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+
+    &::-webkit-input-placeholder {
+        color: var(--color-text-secondary);
+        font-weight: 400;
+        font-style: italic;
+    }
+
+}

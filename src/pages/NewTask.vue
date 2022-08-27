@@ -1,11 +1,11 @@
 <template>
   <Navbar :pageTitle="pageTitle" :pageLink="pageLink" />
   <div class="wrapper-paper">
-    <form class="newtask__form" @submit.prevent="submitTask">
-      <fieldset class="newtask__fieldset">
+    <form class="tasks__form" @submit.prevent="submitTask">
+      <fieldset class="tasks__fieldset">
         <input
           v-model="taskTitle"
-          class="newTask__form-element"
+          class="tasks__form-element"
           type="text"
           name="taskTitle"
           id="taskTitle"
@@ -13,7 +13,7 @@
           required
         />
       </fieldset>
-      <button class="newTask__form-button" type="submit">Write task</button>
+      <button class="tasks__form-button" type="submit">Write task</button>
     </form>
     <div v-if="msgErrors.length > 0" class="bbdd__messages error">
       {{ msgErrors[0].message }} <br />
