@@ -35,19 +35,19 @@
  }
 
  .wrapper__tasks {
-   padding:toRem(20);
-   padding-bottom:toRem(200)
+   padding-bottom:toRem(200);
  }
 
  .wrapper__tasks-status {
    & + .wrapper__tasks-status {
-      margin-top:toRem(50);
+      margin-top:toRem(60);
    }
+   color:var(--color-text-secondary);
  }
 
  .wrapper-paper {
    position: relative;
-   padding:toRem(20) toRem(50);
+   padding:toRem(35) toRem(50);
    background: url(./assets/img/LinedPaperBackground.jpg);
    background-position: 0 0 ;
    background-size: cover;

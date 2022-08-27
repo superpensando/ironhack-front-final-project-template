@@ -9,7 +9,7 @@
           type="text"
           name="taskTitle"
           id="taskTitle"
-          placeholder="New Task Title"
+          placeholder="Task Title...."
           required
         />
       </fieldset>
