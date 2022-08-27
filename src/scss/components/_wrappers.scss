@@ -1,4 +1,4 @@
-.main__wrapper {
+.wrapper__main {
    position:relative;
    display: flex;
    flex-direction: column;
@@ -11,14 +11,14 @@
    margin: toRem(10) toRem(50);
 }
 
-.main__wrapper-decoration {
+.wrapper__main-decoration {
    position:absolute;
    bottom:toRem(100);
    right:toRem(100);
    width:toRem(100);
 }
 
-.main__user {
+.wrapper__main-user {
    position:absolute;
    bottom:toRem(50);
    right:toRem(50);
@@ -26,7 +26,7 @@
    color:var(--color-brand-secondary);
 }
 
-.auth__wrapper {
+.wrapper__auth {
    width:50%;
    padding:toRem(20);
    &:nth-child(2) {
@@ -34,11 +34,18 @@
    }
  }
 
- .tasks__wrapper {
+ .wrapper__tasks {
    padding:toRem(20);
+   padding-bottom:toRem(200)
  }
 
- .newtask__wrapper {
+ .wrapper__tasks-status {
+   & + .wrapper__tasks-status {
+      margin-top:toRem(50);
+   }
+ }
+
+ .wrapper-paper {
    position: relative;
    padding:toRem(20) toRem(50);
    background: url(./assets/img/LinedPaperBackground.jpg);
@@ -56,6 +63,5 @@
       width:100%;
       height:6px;
       @include ripped-effect(2, 6px);
-   }
-
+   } 
  }

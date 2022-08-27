@@ -1,6 +1,6 @@
 <template>
   <Navbar :pageTitle="pageTitle" :pageLink="pageLink" />
-  <div class="newtask__wrapper">
+  <div class="wrapper-paper">
     <form class="newtask__form" @submit.prevent="submitTask">
       <fieldset class="newtask__fieldset">
         <input

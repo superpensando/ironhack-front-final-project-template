@@ -12,7 +12,7 @@
       </li>
     </ul>
   </nav>
-  <p class="main__user"> {{ this.userStore.user.email}} </p>  
+  <p class="wrapper__main-user"> {{ this.userStore.user.email}} </p>  
 </template>
 
 <script>

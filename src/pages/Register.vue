@@ -1,5 +1,5 @@
 <template>
-  <div class="auth__wrapper">
+  <div class="wrapper__auth">
     <h2 class="main__title">Register</h2>
     <form class="auth__form" @submit.prevent="submit">
       <fieldset class="auth__fieldset">
@@ -54,7 +54,7 @@
 
     <router-link class="auth__link" :to="'/'">Click to LogIn</router-link>
   </div>
-  <div class="auth__wrapper">
+  <div class="wrapper__auth">
     <div v-if="msgInfo.length > 0">
       <h3 class="main__subtitle">{{ msgInfo[0].title }}</h3>
       <p>{{ msgInfo[0].body }}</p>
