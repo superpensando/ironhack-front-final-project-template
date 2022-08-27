@@ -35,7 +35,6 @@ export default {
       pageTitle: "New Task",
       pageLink: "Back",
       taskTitle: "",
-      taskDescription: "",
       msgErrors: [],
       router: useRouter(),
       userStore: useUserStore(),
@@ -44,7 +43,6 @@ export default {
   },
   methods: {
     async submitTask() {
-      console.log("entra");
       if (this.taskTitle) {
         try {
           await this.taskStore.newTask(this.taskTitle, this.userStore.user.id);
