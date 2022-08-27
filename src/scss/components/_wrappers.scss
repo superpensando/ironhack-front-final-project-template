@@ -15,14 +15,14 @@
    position:absolute;
    bottom:toRem(100);
    right:toRem(100);
-   width:toRem(100);
+   width:toRem(70);
 }
 
 .wrapper__main-user {
    position:absolute;
    bottom:toRem(50);
    right:toRem(50);
-   font-size: toRem(20);
+   font-size: toRem(18);
    color:var(--color-brand-secondary);
 }
 
@@ -35,7 +35,7 @@
  }
 
  .wrapper__tasks {
-   padding-bottom:toRem(200);
+   padding-bottom:toRem(150);
  }
 
  .wrapper__tasks-status {

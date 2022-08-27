@@ -32,7 +32,9 @@
     }
 }
 
-
+.tasks__form-fieldset {
+    position: relative;
+}
 .tasks__form-element {
     border: none;
     width: 100%;
@@ -49,5 +51,11 @@
         font-weight: 400;
         font-style: italic;
     }
+
+}
+.tasks__form-element-icon {
+  position:absolute;
+  top:toRem(8);
+  left:toRem(-24);
 
 }

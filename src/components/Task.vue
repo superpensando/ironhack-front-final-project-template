@@ -1,9 +1,9 @@
 <template>
   <div class="task">
-       <h4 class="task__title"> - {{ title}}</h4>
+       <h4 class="task__title"> <i class="fa-regular fa-square-check"></i> - {{ title}}</h4>
        <div class="task__actions">
-        <button>Edit</button>
-        <button>Delete</button>
+        <button class="tasks__form-button"><i class="fa-regular fa-trash-can"></i></button>
+        <button class="tasks__form-button"><i class="fa-regular fa-pen-to-square"></i></button>     
        </div>
   </div>
 </template>

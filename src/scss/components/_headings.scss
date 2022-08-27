@@ -10,7 +10,12 @@
 }
 .main__subtitle {
     font-size: toRem(30);
+    width:100%;
+    display:flex; 
+    justify-content: space-between;
+    align-items:center; 
+    min-height:toRem(40);
     & + * {
-        margin-top: toRem(30);
+        margin-top: toRem(20);
     }
 }

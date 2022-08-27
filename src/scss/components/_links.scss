@@ -16,7 +16,6 @@ a:hover {
 
 .tasks__link {
     display:inline-block;
-    width:100%; 
-    margin: toRem(20) 0; 
+    font-size:toRem(20);
     color:var(--color-brand-primary);
 }

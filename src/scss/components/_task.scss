@@ -1,4 +1,7 @@
 .task {
     display: flex;
     justify-content: space-between;
+    & + .task {
+        margin-top:toRem(-6);
+    }
 }

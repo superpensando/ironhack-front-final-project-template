@@ -2,7 +2,8 @@
   <Navbar :pageTitle="pageTitle" :pageLink="pageLink" />
   <div class="wrapper-paper">
     <form class="tasks__form" @submit.prevent="submitTask">
-      <fieldset class="tasks__fieldset">
+      <fieldset class="tasks__form-fieldset">
+        <i class="tasks__form-element-icon fa-solid fa-quote-left"></i>
         <input
           v-model="taskTitle"
           class="tasks__form-element"
@@ -13,7 +14,7 @@
           required
         />
       </fieldset>
-      <button class="tasks__form-button" type="submit">Write task</button>
+      <button class="tasks__form-button" type="submit"><i class="fa-solid fa-pen"></i></button>
     </form>
     <div v-if="msgErrors.length > 0" class="bbdd__messages error">
       {{ msgErrors[0].message }} <br />

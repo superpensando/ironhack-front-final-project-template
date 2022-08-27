@@ -3,16 +3,27 @@
     <ul class="navbar__list">
       <li class="navbar__item">
         <h2 class="main__title">{{ pageTitle }}</h2>
-     </li>
+      </li>
       <li class="navbar__item">
-        <button v-if="pageTitle == 'Dashboard'" class="navbar__link" type="button" @click="signOut">
-          {{ pageLink }}
-        </button>          
-        <router-link v-if="pageTitle == 'New Task'" class="tasks__link" :to="'/dashboard'">Back</router-link>
+        <button
+          v-if="pageTitle == 'My Tasks'"
+          class="navbar__link"
+          type="button"
+          @click="signOut"
+        >
+          {{ pageLink }} <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </button>
+        <router-link
+          v-if="pageTitle == 'New Task'"
+          class="navbar__link"
+          :to="'/dashboard'"
+        >
+          {{ pageLink }} <i class="fa-solid fa-angles-left"></i
+        ></router-link>
       </li>
     </ul>
   </nav>
-  <p class="wrapper__main-user"> {{ this.userStore.user.email}} </p>  
+  <p class="wrapper__main-user">{{ this.userStore.user.email }}</p>
 </template>
 
 <script>
@@ -22,8 +33,8 @@ import { useRouter } from "vue-router";
 export default {
   name: "Navbar",
   props: {
-        pageTitle: String,
-        pageLink: String,
+    pageTitle: String,
+    pageLink: String,
   },
   data() {
     return {
@@ -34,15 +45,15 @@ export default {
   },
   methods: {
     async signOut() {
-        try {
-          this.router.push({ path: "/" });
-          this.userStore.signOut();
-        } catch (e) {
-          this.msgErrors.push(e);
-          //console.log(this.msgErrors);
-        }
-    }
-  }
+      try {
+        this.router.push({ path: "/" });
+        this.userStore.signOut();
+      } catch (e) {
+        this.msgErrors.push(e);
+        //console.log(this.msgErrors);
+      }
+    },
+  },
 };
 </script>
 

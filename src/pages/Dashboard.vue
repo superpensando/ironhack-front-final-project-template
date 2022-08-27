@@ -1,10 +1,13 @@
 <template>
   <Navbar :pageTitle="pageTitle" :pageLink="pageLink" />
   <section class="wrapper__tasks">
-    <router-link class="tasks__link" :to="'/newtask'">Add New Task</router-link>
-
     <article class="wrapper-paper wrapper__tasks-status isUncomplete">
-      <h3 class="main__subtitle">TOdo Tasks</h3>
+      <h3 class="main__subtitle">
+        <span>TODO!</span>
+        <router-link class="tasks__link" :to="'/newtask'"
+          ><i class="fa-solid fa-pen"></i> New!</router-link
+        >
+      </h3>
       <Task
         v-for="task in tasksList.filter((x) => x.is_complete === false)"
         :title="task.title"
@@ -13,7 +16,7 @@
     </article>
 
     <article class="wrapper-paper wrapper__tasks-status isComplete">
-      <h3 class="main__subtitle">Done Tasks</h3>
+      <h3 class="main__subtitle">OKS!</h3>
       <Task
         v-for="task in tasksList.filter((x) => x.is_complete === true)"
         :title="task.title"
@@ -35,7 +38,7 @@ export default {
   components: { Navbar, Task },
   data() {
     return {
-      pageTitle: "Dashboard",
+      pageTitle: "My Tasks",
       pageLink: "Log out",
       msgErrors: [],
       router: useRouter(),
