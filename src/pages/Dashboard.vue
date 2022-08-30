@@ -2,11 +2,12 @@
   <Navbar :pageTitle="pageTitle" :pageLink="pageLink" />
   <section class="wrapper__tasks">
     <article class="wrapper-paper wrapper__tasks-status isUncomplete">
+      <img class="wrapper-paper-pin" src="./../assets/img/pin.png" alt="" />
       <h3 class="main__subtitle">
         <span>TODO!</span>
-        <router-link class="tasks__link" :to="'/newtask'"
-          ><i class="fa-solid fa-pen"></i> New!</router-link
-        >
+        <router-link class="tasks__link" :to="'/newtask'">
+          New Task!<i class="fa-solid fa-lightbulb"></i>
+        </router-link>
       </h3>
       <Task
         v-for="task in tasksList.filter((x) => x.is_complete === false)"
@@ -16,6 +17,7 @@
     </article>
 
     <article class="wrapper-paper wrapper__tasks-status isComplete">
+      <img class="wrapper-paper-pin" src="./../assets/img/pin.png" alt="" />
       <h3 class="main__subtitle">OKS!</h3>
       <Task
         v-for="task in tasksList.filter((x) => x.is_complete === true)"

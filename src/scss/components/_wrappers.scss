@@ -65,3 +65,11 @@
       @include ripped-effect(2, 6px);
    } 
  }
+ .wrapper-paper-pin {
+   position:absolute;
+   top:toRem(-20);
+   left:toRem(-10);
+   width:30px;
+   height:auto;
+   transform:rotate(-60deg);
+ }
