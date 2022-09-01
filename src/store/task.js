@@ -23,6 +23,12 @@ export const useTaskStore = defineStore("tasks", {
     },
     // Hacer el PUT (edit)
     // Hacer el delete
-    // Hacer el PUT (cambiar entre completada y pendiente)
+    async updateStatus (taskID, taskStatus) {
+      await supabase
+        .from('tasks')
+        .update({ is_complete:taskStatus })
+        .match({ id: taskID });
+      this.fetchTasks();
+    },
   },
 });

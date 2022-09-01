@@ -12,7 +12,10 @@
       <Task
         v-for="task in tasksList.filter((x) => x.is_complete === false)"
         :title="task.title"
-        :key="task.id"
+        :idTask="task.id"
+        :isComplete="true"
+        :key="task.id" 
+        @updateStatus="handleChildUpdateStatus"     
       />
     </article>
 
@@ -22,7 +25,10 @@
       <Task
         v-for="task in tasksList.filter((x) => x.is_complete === true)"
         :title="task.title"
+        :idTask="task.id"
+        :isComplete="false"
         :key="task.id"
+        @updateStatus="handleChildUpdateStatus"
       />
     </article>
   </section>
@@ -54,10 +60,14 @@ export default {
       try {
         await this.taskStore.fetchTasks();
         this.tasksList = this.taskStore.tasks;
+        //console.log(this.taskStore.tasks);
       } catch (e) {
         //errorMsg.value = e.message;
       }
     },
+    handleChildUpdateStatus(){
+      this.getTasks();
+    }
   },
   mounted: function () {
     this.getTasks();
