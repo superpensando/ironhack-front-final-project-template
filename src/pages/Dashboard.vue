@@ -21,7 +21,7 @@
 
     <article class="wrapper-paper wrapper__tasks-status isComplete">
       <img class="wrapper-paper-pin" src="./../assets/img/pin.png" alt="" />
-      <h3 class="main__subtitle">OKS!</h3>
+      <h3 class="main__subtitle">DONE!</h3>
       <Task
         v-for="task in tasksList.filter((x) => x.is_complete === true)"
         :title="task.title"
