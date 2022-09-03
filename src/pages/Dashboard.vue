@@ -6,7 +6,7 @@
       <h3 class="main__subtitle">
         <span>TODO!</span>
         <router-link class="tasks__link" :to="'/newtask'">
-          New Task!<i class="fa-solid fa-lightbulb"></i>
+          New Task!
         </router-link>
       </h3>
       <Task
@@ -15,7 +15,8 @@
         :idTask="task.id"
         :isComplete="true"
         :key="task.id" 
-        @updateStatus="handleChildUpdateStatus"     
+        @updateStatusTask="handleChildUpdateStatusTask"  
+        @deleteTask="handleChildDeleteTask" 
       />
     </article>
 
@@ -28,7 +29,7 @@
         :idTask="task.id"
         :isComplete="false"
         :key="task.id"
-        @updateStatus="handleChildUpdateStatus"
+        @updateStatusTask="handleChildUpdateStatusTask" 
       />
     </article>
   </section>
@@ -65,9 +66,12 @@ export default {
         //errorMsg.value = e.message;
       }
     },
-    handleChildUpdateStatus(){
+    handleChildUpdateStatusTask(){
       this.getTasks();
-    }
+    },
+    handleChildDeleteTask(){
+      this.getTasks();
+    },
   },
   mounted: function () {
     this.getTasks();

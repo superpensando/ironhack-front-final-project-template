@@ -21,14 +21,19 @@ export const useTaskStore = defineStore("tasks", {
         .insert([{ title: taskTitle, is_complete: false, user_id: userID }]);
       this.fetchTasks();
     },
-    // Hacer el PUT (edit)
-    // Hacer el delete
-    async updateStatus (taskID, taskStatus) {
+    async updateStatusTask (taskID, taskStatus) {
       await supabase
         .from('tasks')
         .update({ is_complete:taskStatus })
         .match({ id: taskID });
       this.fetchTasks();
     },
+    async deleteTask (taskID) {
+      await supabase
+        .from('tasks')
+        .delete()
+        .match({ id: taskID });
+      this.fetchTasks();
+    }
   },
 });
