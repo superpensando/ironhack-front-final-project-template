@@ -1,7 +1,14 @@
 .task {
     display: flex;
     justify-content: space-between;
-    & + .task {
-        margin-top:toRem(-6);
+    align-items: center;
+    flex:0 0 auto;
+    > *:last-child {
+        width:14%;
     }
+}
+.task__title {
+    font-weight: 600;
+    font-size: toRem(20);
+    line-height: toRem(24);
 }

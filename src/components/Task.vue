@@ -1,19 +1,39 @@
 <template>
   <div class="task">
-    <h4 class="task__title">
-      <i class="fa-regular fa-square-check" @click="updateStatusTask"></i> -
-      {{ title }}
-    </h4>
+    <template v-if="!isEdit">
+      <h4 class="task__title">
+        <i class="fa-regular fa-square-check" @click="updateStatusTask"></i> -
+        {{ title }}
+      </h4>
+    </template>
+    <template v-if="isEdit">
+      <form class="tasks__form" @submit.prevent="submitTask">
+        <fieldset class="tasks__form-fieldset">
+          <i class="tasks__form-element-icon fa-solid fa-quote-left"></i>
+          <input
+            v-model="taskTitle"
+            class="tasks__form-element"
+            type="text"
+            name="taskTitle"
+            id="taskTitle"
+            placeholder="Task Title...."
+            required
+          />
+        </fieldset>
+        <button class="tasks__form-button" type="submit">Change</button>
+      </form>
+    </template>
+
     <div class="task__actions">
       <template v-if="isComplete">
-        <i class="fa-regular fa-pen-to-square"></i>
-        <i  class="fa-regular fa-trash-can" @click="deleteTask" ></i>
+        <i class="fa-regular fa-pen-to-square" @click="isEdit=!isEdit"></i>
+        <i class="fa-regular fa-trash-can" @click="deleteTask"></i>
       </template>
     </div>
   </div>
   <div v-if="msgErrors.length > 0" class="bbdd__messages error">
-      {{ msgErrors[0].message }}  {{ msgErrors[0].status }}
-    </div>
+    {{ msgErrors[0].message }} {{ msgErrors[0].status }}
+  </div>
 </template>
 
 <script>
@@ -33,7 +53,8 @@ export default {
       router: useRouter(),
       taskStore: useTaskStore(),
       msgErrors: [],
-      edit: false,
+      isEdit: false,
+      taskTitle: " - " + this.title,
     };
   },
   methods: {
@@ -45,10 +66,13 @@ export default {
         this.msgErrors.push(e);
       }
     },
+    async editTask() {
+      
+    },
     async deleteTask() {
       try {
         await this.taskStore.deleteTask(this.idTask);
-        this.$emit('deleteTask');
+        this.$emit("deleteTask");
       } catch (e) {
         this.msgErrors.push(e);
       }
