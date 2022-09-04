@@ -9,7 +9,12 @@
 }
 
 .tasks__form-button {
+    border-radius: var(--border-radius-primary);
     border:none;
-    background-color:transparent;
-    float:right;
+    background-color: var(--color-brand-primary);
+    padding:toRem(0) toRem(10);
+    color:var(--color-text-primary);
+    font-size:toRem(14);
+    height:toRem(30);
+    cursor: pointer;
 }
