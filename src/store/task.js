@@ -28,6 +28,13 @@ export const useTaskStore = defineStore("tasks", {
         .match({ id: taskID });
       this.fetchTasks();
     },
+    async editTask (taskID, taskTitle) {
+      await supabase
+        .from('tasks')
+        .update({ title:taskTitle })
+        .match({ id: taskID });
+      this.fetchTasks();
+    },
     async deleteTask (taskID) {
       await supabase
         .from('tasks')

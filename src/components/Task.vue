@@ -7,7 +7,7 @@
       </h4>
     </template>
     <template v-if="isEdit">
-      <form class="tasks__form" @submit.prevent="submitTask">
+      <form class="tasks__form" @submit.prevent="editTask">
         <fieldset class="tasks__form-fieldset">
           <i class="tasks__form-element-icon fa-solid fa-quote-left"></i>
           <input
@@ -20,7 +20,6 @@
             required
           />
         </fieldset>
-        <button class="tasks__form-button" type="submit">Change</button>
       </form>
     </template>
 
@@ -54,7 +53,7 @@ export default {
       taskStore: useTaskStore(),
       msgErrors: [],
       isEdit: false,
-      taskTitle: " - " + this.title,
+      taskTitle: this.title,
     };
   },
   methods: {
@@ -67,7 +66,13 @@ export default {
       }
     },
     async editTask() {
-      
+      try {
+        await this.taskStore.editTask(this.idTask,this.taskTitle);
+        this.isEdit=false;
+        this.$emit("editTask"); 
+      } catch (e) {
+        this.msgErrors.push(e);
+      }
     },
     async deleteTask() {
       try {

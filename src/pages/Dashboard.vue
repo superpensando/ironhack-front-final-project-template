@@ -17,6 +17,7 @@
         :key="task.id" 
         @updateStatusTask="handleChildUpdateStatusTask"  
         @deleteTask="handleChildDeleteTask" 
+        @editTask="handleChildEditTask"
       />
     </article>
 
@@ -67,6 +68,9 @@ export default {
       }
     },
     handleChildUpdateStatusTask(){
+      this.getTasks();
+    },
+    handleChildEditTask(){
       this.getTasks();
     },
     handleChildDeleteTask(){
