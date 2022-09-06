@@ -1,10 +1,9 @@
 .wrapper__main {
    position:relative;
    display: flex;
-   flex-direction: column;
-   width:900px;
+   width:toRem(900);
    height:100%;
-   min-height:600px;
+   min-height:toRem(400);
    background-color: var(--color-background-secondary);
    border-radius:var(--border-radius-primary);
    padding: toRem(48);
@@ -32,6 +31,11 @@
    &:nth-child(2) {
       text-align: right;
    }
+ }
+
+ .wrapper__main-dashboard,
+ .wrapper__main-newTask {
+   width:100%;
  }
 
  .wrapper__tasks {
@@ -89,3 +93,7 @@
    height:auto;
    transform:rotate(-60deg);
  }
+ .wrapper-paper-task {
+   height:toRem(125);
+   overflow: auto;
+ }  

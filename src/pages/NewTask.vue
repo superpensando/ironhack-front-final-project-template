@@ -1,24 +1,29 @@
 <template>
-  <Navbar :pageTitle="pageTitle" :pageLink="pageLink" />
-  <div class="wrapper-paper">
-    <form class="tasks__form tasks__form-newTask " @submit.prevent="submitTask">
-      <fieldset class="tasks__form-fieldset">
-        <i class="tasks__form-element-icon fa-solid fa-quote-left"></i>
-        <input
-          v-model="taskTitle"
-          class="tasks__form-element"
-          type="text"
-          name="taskTitle"
-          id="taskTitle"
-          placeholder="Task Title...."
-          required
-        />
-      </fieldset>
-      <button class="tasks__form-button" type="submit">Add</button>
-    </form>
-    <div v-if="msgErrors.length > 0" class="bbdd__messages error">
-      {{ msgErrors[0].message }} <br />
-      {{ msgErrors[0].status }}
+  <div class="wrapper__main-newTask">
+    <Navbar :pageTitle="pageTitle" :pageLink="pageLink" />
+    <div class="wrapper-paper">
+      <form
+        class="tasks__form tasks__form-newTask"
+        @submit.prevent="submitTask"
+      >
+        <fieldset class="tasks__form-fieldset">
+          <i class="tasks__form-element-icon fa-solid fa-quote-left"></i>
+          <input
+            v-model="taskTitle"
+            class="tasks__form-element"
+            type="text"
+            name="taskTitle"
+            id="taskTitle"
+            placeholder="Task Title...."
+            required
+          />
+        </fieldset>
+        <button class="tasks__form-button" type="submit">Add</button>
+      </form>
+      <div v-if="msgErrors.length > 0" class="bbdd__messages error">
+        {{ msgErrors[0].message }} <br />
+        {{ msgErrors[0].status }}
+      </div>
     </div>
   </div>
 </template>

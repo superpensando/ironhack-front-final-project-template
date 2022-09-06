@@ -1,39 +1,45 @@
 <template>
-  <Navbar :pageTitle="pageTitle" :pageLink="pageLink" />
-  <section class="wrapper__tasks">
-    <article class="wrapper-paper wrapper__tasks-status isUncomplete">
-      <img class="wrapper-paper-pin" src="./../assets/img/pin.png" alt="" />
-      <h3 class="main__subtitle">
-        <span>TODO!</span>
-        <router-link class="tasks__link" :to="'/newtask'">
-          New Task!
-        </router-link>
-      </h3>
-      <Task
-        v-for="task in tasksList.filter((x) => x.is_complete === false)"
-        :title="task.title"
-        :idTask="task.id"
-        :isComplete="true"
-        :key="task.id" 
-        @updateStatusTask="handleChildUpdateStatusTask"  
-        @deleteTask="handleChildDeleteTask" 
-        @editTask="handleChildEditTask"
-      />
-    </article>
+  <div class="wrapper__main-dashboard">
+    <Navbar :pageTitle="pageTitle" :pageLink="pageLink" />
+    <section class="wrapper__tasks">
+      <article class="wrapper-paper wrapper__tasks-status isUncomplete">
+        <img class="wrapper-paper-pin" src="./../assets/img/pin.png" alt="" />
+        <h3 class="main__subtitle">
+          <span>TODO!</span>
+          <router-link class="tasks__link" :to="'/newtask'">
+            New Task!
+          </router-link>
+        </h3>
+        <div class="wrapper-paper-task">
+          <Task
+            v-for="task in tasksList.filter((x) => x.is_complete === false)"
+            :title="task.title"
+            :idTask="task.id"
+            :isComplete="true"
+            :key="task.id"
+            @updateStatusTask="handleChildUpdateStatusTask"
+            @deleteTask="handleChildDeleteTask"
+            @editTask="handleChildEditTask"
+          />
+        </div>
+      </article>
 
-    <article class="wrapper-paper wrapper__tasks-status isComplete">
-      <img class="wrapper-paper-pin" src="./../assets/img/pin.png" alt="" />
-      <h3 class="main__subtitle">DONE!</h3>
-      <Task
-        v-for="task in tasksList.filter((x) => x.is_complete === true)"
-        :title="task.title"
-        :idTask="task.id"
-        :isComplete="false"
-        :key="task.id"
-        @updateStatusTask="handleChildUpdateStatusTask" 
-      />
-    </article>
-  </section>
+      <article class="wrapper-paper wrapper__tasks-status isComplete">
+        <img class="wrapper-paper-pin" src="./../assets/img/pin.png" alt="" />
+        <h3 class="main__subtitle">DONE!</h3>
+        <div class="wrapper-paper-task">
+          <Task
+            v-for="task in tasksList.filter((x) => x.is_complete === true)"
+            :title="task.title"
+            :idTask="task.id"
+            :isComplete="false"
+            :key="task.id"
+            @updateStatusTask="handleChildUpdateStatusTask"
+          />
+        </div>
+      </article>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -67,13 +73,13 @@ export default {
         //errorMsg.value = e.message;
       }
     },
-    handleChildUpdateStatusTask(){
+    handleChildUpdateStatusTask() {
       this.getTasks();
     },
-    handleChildEditTask(){
+    handleChildEditTask() {
       this.getTasks();
     },
-    handleChildDeleteTask(){
+    handleChildDeleteTask() {
       this.getTasks();
     },
   },
