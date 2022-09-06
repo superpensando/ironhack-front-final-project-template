@@ -3,7 +3,7 @@
    display: flex;
    width:toRem(900);
    height:100%;
-   min-height:toRem(400);
+   min-height:toRem(300);
    background-color: var(--color-background-secondary);
    border-radius:var(--border-radius-primary);
    padding: toRem(48);
@@ -36,11 +36,12 @@
  .wrapper__main-dashboard,
  .wrapper__main-newTask {
    width:100%;
+   & + .wrapper__main-decoration {
+      display: none;
+   }
+
  }
 
- .wrapper__tasks {
-   padding-bottom:toRem(100);
- }
 
  .wrapper__tasks-status {
    & + .wrapper__tasks-status {
