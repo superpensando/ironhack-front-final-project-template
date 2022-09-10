@@ -44,7 +44,7 @@
           {{ msgForm.confirmPassword }}
         </p>
       </fieldset>
-      <button class="auth__form-button" type="submit">Submit</button>
+      <button class="button-auth__form" type="submit">Submit</button>
     </form>
     <div v-if="msgErrors.length > 0" class="bbdd__messages error">
       {{ msgErrors[0].message }}
