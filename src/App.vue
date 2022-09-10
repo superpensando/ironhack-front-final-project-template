@@ -1,7 +1,6 @@
 <template>
 <section class="wrapper__main">
     <router-view class="app-main" />
-    <img class="wrapper__main-decoration" src="./assets/vue.svg" alt=""/>
 </section>
 </template>
 
