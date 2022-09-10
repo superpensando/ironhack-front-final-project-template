@@ -96,7 +96,7 @@ export default {
         this.msgForm["email"] = "";
         this.validateFormEmail = true;
       } else {
-        this.msgForm["email"] = "Invalid Email Address";
+        this.msgForm["email"] = "Invalid Email rules";
         this.validateFormEmail = false;
       }
     },

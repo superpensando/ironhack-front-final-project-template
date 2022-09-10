@@ -34,8 +34,7 @@
       <button class="auth__form-button" type="submit">Submit</button>
     </form>
     <div v-if="msgErrors.length > 0" class="bbdd__messages error">
-      {{ msgErrors[0].message }} <br />
-      {{ msgErrors[0].status }}
+      {{ msgErrors[0].message }}
     </div>
     <router-link class="auth__link" :to="'/register/'"
       >Click to Register</router-link
@@ -71,16 +70,14 @@ export default {
       if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
         this.msgForm["email"] = "";
       } else {
-        this.msgForm["email"] = "Invalid Email Address";
+        this.msgForm["email"] = "Invalid Email rules";
       }
     },
     validatePassword(value) {
-      let difference = 8 - value.length;
-      if (value.length < 8) {
-        this.msgForm["password"] =
-          "Must be 8 characters! " + difference + " characters left";
-      } else {
+      if (/^(?=(?:.*\d))(?=.*[A-Z])(?=.*[a-z])\S{8,64}$/.test(value)) {
         this.msgForm["password"] = "";
+      } else {
+        this.msgForm["password"] = "Invalid Password rules";
       }
     },
     async submit() {
