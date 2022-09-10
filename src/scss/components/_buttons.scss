@@ -1,4 +1,7 @@
-.auth__form-button {
+/*Buttons*/
+
+/*Buttons Auth*/
+.button-auth__form {
     border-radius: var(--border-radius-primary);
     border:none;
     background-color: var(--color-brand-primary);
@@ -7,8 +10,8 @@
     font-size:toRem(20);
     cursor: pointer;
 }
-
-.tasks__form-button {
+/*Buttons Tasks*/
+.button-tasks__form {
     border-radius: var(--border-radius-primary);
     border:none;
     background-color: var(--color-brand-primary);
@@ -17,4 +20,28 @@
     font-size:toRem(14);
     height:toRem(30);
     cursor: pointer;
+}
+/*Buttons Experience*/
+.button-exp__group {
+    display:flex;
+    justify-content: flex-end;
+    .button-exp {
+        border-radius: var(--border-radius-primary);
+        border:none;
+        margin:toRem(10) toRem(15);
+        padding:toRem(10);
+        cursor:pointer;
+        &.forest {
+            background-color: #008480;
+            color:var( --color-text-primary);
+        }
+        &.ocean {
+            background-color: #0092BA;
+            color:var( --color-text-primary);
+        }
+        &.spring {
+            background-color: #8959ad;
+            color:var( --color-text-primary);
+        }
+    }
 }

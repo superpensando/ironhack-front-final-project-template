@@ -31,7 +31,7 @@
         </p>
       </fieldset>
 
-      <button class="auth__form-button" type="submit">Submit</button>
+      <button class="button-auth__form" type="submit">Submit</button>
     </form>
     <div v-if="msgErrors.length > 0" class="bbdd__messages error">
       {{ msgErrors[0].message }}
@@ -39,6 +39,13 @@
     <router-link class="auth__link" :to="'/register/'"
       >Click to Register</router-link
     >
+  </div>
+  <div class="wrapper__auth">
+      <div class="button-exp__group">
+        <button @click="setTheme('forest')" class="button-exp forest" id="forest" type="text">Forest</button>
+        <button @click="setTheme('ocean')" class="button-exp ocean" id="ocean" type="text">Ocean</button>
+        <button @click="setTheme('spring')" class="button-exp spring" id="spring" type="text">Spring</button>
+      </div>
   </div>
 </template>
 
@@ -66,6 +73,10 @@ export default {
     },
   },
   methods: {
+    setTheme(theme){
+      const el= document.getElementsByTagName("html")[0];
+      el.classList.replace(el.classList, theme);
+    },
     validateEmail(value) {
       if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
         this.msgForm["email"] = "";
