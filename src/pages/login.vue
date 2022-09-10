@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper__auth">
-    <h2 class="main__title">Log in</h2>
+    <h2 class="title__main">Log in</h2>
     <form class="auth__form" @submit.prevent="submit">
       <fieldset class="auth__fieldset">
         <input
@@ -41,11 +41,32 @@
     >
   </div>
   <div class="wrapper__auth">
-      <div class="button-exp__group">
-        <button @click="setTheme('forest')" class="button-exp forest" id="forest" type="text">Forest</button>
-        <button @click="setTheme('ocean')" class="button-exp ocean" id="ocean" type="text">Ocean</button>
-        <button @click="setTheme('spring')" class="button-exp spring" id="spring" type="text">Spring</button>
-      </div>
+    <div class="button-exp__group">
+      <button
+        @click="setTheme('forest')"
+        class="button-exp forest"
+        id="forest"
+        type="text"
+      >
+        Forest
+      </button>
+      <button
+        @click="setTheme('ocean')"
+        class="button-exp ocean"
+        id="ocean"
+        type="text"
+      >
+        Ocean
+      </button>
+      <button
+        @click="setTheme('spring')"
+        class="button-exp spring"
+        id="spring"
+        type="text"
+      >
+        Spring
+      </button>
+    </div>
   </div>
 </template>
 
@@ -73,8 +94,8 @@ export default {
     },
   },
   methods: {
-    setTheme(theme){
-      const el= document.getElementsByTagName("html")[0];
+    setTheme(theme) {
+      const el = document.getElementsByTagName("html")[0];
       el.classList.replace(el.classList, theme);
     },
     validateEmail(value) {

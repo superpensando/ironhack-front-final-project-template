@@ -1,4 +1,5 @@
-.main__title {
+/* Headings, title, subtitles*/
+.title__main {
     font-size: toRem(50);
     font-weight: 600;
     color:var(--color-text-primary);
@@ -8,7 +9,7 @@
         margin-top: toRem(100);
     }
 }
-.main__subtitle {
+.subtitle__main {
     font-size: toRem(30);
     width:100%;
     display:flex; 

@@ -2,7 +2,7 @@
   <nav class="navbar">
     <ul class="navbar__list">
       <li class="navbar__item">
-        <h2 class="main__title">{{ pageTitle }}</h2>
+        <h2 class="title__main">{{ pageTitle }}</h2>
       </li>
       <li class="navbar__item">
         <button
