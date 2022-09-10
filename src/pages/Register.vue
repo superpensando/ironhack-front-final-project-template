@@ -44,12 +44,10 @@
           {{ msgForm.confirmPassword }}
         </p>
       </fieldset>
-
       <button class="auth__form-button" type="submit">Submit</button>
     </form>
     <div v-if="msgErrors.length > 0" class="bbdd__messages error">
-      {{ msgErrors[0].message }} <br />
-      {{ msgErrors[0].status }}
+      {{ msgErrors[0].message }}
     </div>
 
     <router-link class="auth__link" :to="'/'">Click to LogIn</router-link>
@@ -77,6 +75,8 @@ export default {
       msgForm: [],
       router: useRouter(),
       userStore: useUserStore(),
+      validateFormEmail: false,
+      validateFormPassword: false,
     };
   },
   watch: {
@@ -94,17 +94,23 @@ export default {
     validateEmail(value) {
       if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
         this.msgForm["email"] = "";
+        this.validateFormEmail = true;
       } else {
         this.msgForm["email"] = "Invalid Email Address";
+        this.validateFormEmail = false;
       }
     },
     validatePassword(value) {
-      let difference = 8 - value.length;
-      if (value.length < 8) {
-        this.msgForm["password"] =
-          "Must be 8 characters! " + difference + " characters left";
-      } else {
+      if (/^(?=(?:.*\d))(?=.*[A-Z])(?=.*[a-z])\S{8,64}$/.test(value)) {
         this.msgForm["password"] = "";
+        this.validateFormPassword = true;
+      } else {
+        this.msgForm["password"] = "Your password needs at least: ";
+        this.msgForm["password"] += " 1 number 0-9";
+        this.msgForm["password"] += " + 1 Capital letter";
+        this.msgForm["password"] += " + 1 lowercase letter";
+        this.msgForm["password"] += " + 8 characters";
+        this.validateFormPassword = false;
       }
     },
     validateConfirmPassword(value) {
@@ -115,7 +121,13 @@ export default {
       }
     },
     async submit() {
-      if (this.password && this.email && this.confirmPassword) {
+      if (
+        this.password &&
+        this.email &&
+        this.confirmPassword &&
+        this.validateFormEmail &&
+        this.validateFormPassword
+      ) {
         try {
           await this.userStore.signUp(this.email, this.password);
           this.msgInfo.push({
@@ -124,7 +136,7 @@ export default {
           });
           setTimeout(() => {
             this.router.push({ path: "/" });
-          }, 4000);
+          }, 5000);
         } catch (e) {
           this.msgErrors.push(e);
         }
