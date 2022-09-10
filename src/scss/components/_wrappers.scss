@@ -20,14 +20,6 @@
       background-image: var(--background-decoration); 
    }
 }
-
-.wrapper__main-decoration {
-   position:absolute;
-   bottom:toRem(50);
-   right:toRem(50);
-   width:toRem(70);
-}
-
 .wrapper__main-user {
    position:absolute;
    top:toRem(54);
@@ -54,10 +46,6 @@
  .wrapper__main-newTask {
    width:100%;
    z-index:1; 
-   & + .wrapper__main-decoration {
-      display: none;
-   }
-
  }
 
 /* Wrapper Tasks */
