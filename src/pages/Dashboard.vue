@@ -3,7 +3,6 @@
     <Navbar :pageTitle="pageTitle" :pageLink="pageLink" />
     <section class="wrapper__tasks">
       <article class="wrapper-paper wrapper__tasks-status isUncomplete">
-        <img class="wrapper-paper-pin" src="./../assets/img/pin.png" alt="" />
         <h3 class="main__subtitle">
           <span>TODO!</span>
           <router-link class="tasks__link" :to="'/newtask'">
@@ -25,7 +24,6 @@
       </article>
 
       <article class="wrapper-paper wrapper__tasks-status isComplete">
-        <img class="wrapper-paper-pin" src="./../assets/img/pin.png" alt="" />
         <h3 class="main__subtitle">DONE!</h3>
         <div class="wrapper-paper-task">
           <Task

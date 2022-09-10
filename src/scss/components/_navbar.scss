@@ -12,12 +12,15 @@
     display:flex;
     align-items: center;
     font-size:inherit;
-    color:var(--color-brand-primary);
+    color:var(--color-brand-secondary);
     text-decoration: none;
     background-color: transparent;
     border:none; 
     cursor: pointer;
     &:hover {
         text-decoration:none; 
+    }
+    .fa-solid {
+        color:var(--color-brand-secondary);
     }
 }

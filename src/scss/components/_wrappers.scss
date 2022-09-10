@@ -8,6 +8,16 @@
    border-radius:var(--border-radius-primary);
    padding: toRem(48);
    margin: toRem(10) toRem(50);
+   overflow:hidden;
+   &::after {
+      position: absolute;
+      width:40%;
+      height:100%;
+      top:0;
+      right:0;
+      content:"";
+      background-image: var(--background-decoration); 
+   }
 }
 
 .wrapper__main-decoration {
@@ -31,11 +41,13 @@
    &:nth-child(2) {
       text-align: right;
    }
+   z-index:1; 
  }
 
  .wrapper__main-dashboard,
  .wrapper__main-newTask {
    width:100%;
+   z-index:1; 
    & + .wrapper__main-decoration {
       display: none;
    }
@@ -85,14 +97,6 @@
       height:6px;
       @include ripped-effect(2, 6px);
    } 
- }
- .wrapper-paper-pin {
-   position:absolute;
-   top:toRem(-20);
-   left:toRem(-10);
-   width:30px;
-   height:auto;
-   transform:rotate(-60deg);
  }
  .wrapper-paper-task {
    height:toRem(125);
