@@ -1,3 +1,4 @@
+/* Wrapper Main*/
 .wrapper__main {
    position:relative;
    display: flex;
@@ -11,7 +12,7 @@
    overflow:hidden;
    &::after {
       position: absolute;
-      width:40%;
+      width:48%;
       height:100%;
       top:0;
       right:0;
@@ -35,15 +36,20 @@
    color:var(--color-brand-secondary);
 }
 
+/* Wrapper Auth (Register & Login)*/
 .wrapper__auth {
    width:50%;
    padding:toRem(20);
    &:nth-child(2) {
       text-align: right;
+      .main__subtitle {
+         justify-content: flex-end;
+      }
    }
    z-index:1; 
  }
 
+ /* Wrapper Dashbaord & New Task */
  .wrapper__main-dashboard,
  .wrapper__main-newTask {
    width:100%;
@@ -54,7 +60,7 @@
 
  }
 
-
+/* Wrapper Tasks */
  .wrapper__tasks-status {
    & + .wrapper__tasks-status {
       margin-top:toRem(60);
@@ -78,6 +84,7 @@
    }
  }
 
+ /* wrapper shared */
  .wrapper-paper {
    position: relative;
    padding:toRem(35) toRem(35);
