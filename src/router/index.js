@@ -4,22 +4,22 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import(/* webpackChunkName: 'index' */ './../pages/Login.vue'),
+    component: () => import(/* webpackChunkName: 'index' */ '../pages/Login.vue'),
   },
   {
     path: '/register',
     name: 'register',
-    component: () => import(/* webpackChunkName: 'index' */ './../pages/Register.vue'),
+    component: () => import(/* webpackChunkName: 'index' */ '../pages/Register.vue'),
   },
   {
     path: '/dashboard',
     name: 'dashbaord',
-    component: () => import(/* webpackChunkName: 'index' */ './../pages/Dashboard.vue'),
+    component: () => import(/* webpackChunkName: 'index' */ '../pages/Dashboard.vue'),
   },
   {
     path: '/newtask',
     name: 'newtask',
-    component: () => import(/* webpackChunkName: 'index' */ './../pages/NewTask.vue'),
+    component: () => import(/* webpackChunkName: 'index' */ '../pages/NewTask.vue'),
   },
 ];
 
