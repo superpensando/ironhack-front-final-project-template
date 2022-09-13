@@ -18,7 +18,7 @@
             required
           />
         </fieldset>
-        <button class="button-form-tasks" type="submit">Add</button>
+        <button class="button-tasks__form" type="submit">Add</button>
       </form>
       <div v-if="msgErrors.length > 0" class="bbdd__messages error">
         {{ msgErrors[0].message }} <br />
