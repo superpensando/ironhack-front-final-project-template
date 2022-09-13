@@ -16,6 +16,7 @@
             type="text"
             name="taskTitle"
             id="taskTitle"
+            ref="taskTitle"
             placeholder="Task Title...."
             required
           />
@@ -25,7 +26,7 @@
 
     <div class="task__actions">
       <template v-if="isComplete">
-        <i class="task__actions-icon fa-regular fa-pen-to-square" @click="isEdit=!isEdit"></i>
+        <i class="task__actions-icon fa-regular fa-pen-to-square" @click="showEdit"></i>
         <i class="task__actions-icon fa-regular fa-trash-can" @click="deleteTask"></i>
       </template>
     </div>
@@ -57,6 +58,10 @@ export default {
     };
   },
   methods: {
+    showEdit(){
+      this.isEdit=!this.isEdit;
+      //if (this.isEdit) {this.$refs.taskTitle.focus()}
+    },
     async updateStatusTask() {
       try {
         await this.taskStore.updateStatusTask(this.idTask, this.isComplete);

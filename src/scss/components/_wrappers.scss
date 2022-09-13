@@ -75,13 +75,10 @@
  /* wrapper shared */
  .wrapper-paper {
    position: relative;
-   padding:toRem(35) toRem(35);
-   background: url(./assets/img/LinedPaperBackground.jpg);
-   background-position: 0 0 ;
-   background-size: cover;
-   background-repeat:no-repeat;
+   padding:toRem(33) toRem(35);
    border-top-left-radius: var(--border-radius-secondary);
    border-top-right-radius: var(--border-radius-secondary);
+   background: repeating-linear-gradient(var(--color-background-tertiary), var(--color-background-tertiary) 25px, var( --color-brand-tertiary) 26px, var(--color-brand-tertiary) 27px);
    &::after {
       position:absolute;
       content:"";
