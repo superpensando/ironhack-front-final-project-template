@@ -9,17 +9,17 @@ const routes = [
   {
     path: '/register',
     name: 'register',
-    component: () => import('./../pages/register.vue'),
+    component: () => import('./../pages/Register.vue'),
   },
   {
     path: '/dashboard',
     name: 'dashbaord',
-    component: () => import('./../pages/dashboard.vue'),
+    component: () => import('./../pages/Dashboard.vue'),
   },
   {
     path: '/newtask',
     name: 'newtask',
-    component: () => import('./../pages/newTask.vue'),
+    component: () => import('./../pages/NewTask.vue'),
   },
 ];
 
