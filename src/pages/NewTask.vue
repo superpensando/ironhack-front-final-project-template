@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper__main-newTask">
+  <div class="wrapper-main--newTask">
     <Navbar :pageTitle="pageTitle" :pageLink="pageLink" />
     <div class="wrapper-paper">
       <form

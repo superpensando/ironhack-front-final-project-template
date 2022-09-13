@@ -1,8 +1,8 @@
 <template>
-  <div class="wrapper__main-dashboard">
+  <div class="wrapper-main--dashboard">
     <Navbar :pageTitle="pageTitle" :pageLink="pageLink" />
     <section class="wrapper__tasks">
-      <article class="wrapper-paper wrapper__tasks-status isUncomplete">
+      <article class="wrapper-paper wrapper-tasks--status isUncomplete">
         <h3 class="subtitle-main">
           <span>TODO!</span>
           <router-link class="link-tasks" :to="'/newtask'">
@@ -23,7 +23,7 @@
         </div>
       </article>
 
-      <article class="wrapper-paper wrapper__tasks-status isComplete">
+      <article class="wrapper-paper wrapper-tasks--status isComplete">
         <h3 class="subtitle-main">DONE!</h3>
         <div class="wrapper-paper-task">
           <Task
