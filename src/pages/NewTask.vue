@@ -3,7 +3,7 @@
     <Navbar :pageTitle="pageTitle" :pageLink="pageLink" />
     <div class="wrapper-paper">
       <form
-        class="form-tasks form-tasks-newTask"
+        class="form-tasks form-tasks--newTask"
         @submit.prevent="submitTask"
       >
         <fieldset class="form-tasks__fieldset">
