@@ -1,15 +1,14 @@
-$html-font-size: 16; //16px
-
 @use "sass:math";
+/*Mixins*/
 
+/* pixel to rem calulator*/
+$html-font-size: 16; //16px
 @function toRem($value) {
-
-    $remValue: math.div($value, $html-font-size) + rem;
-  
-    @return $remValue;
-  
+    $remValue: math.div($value, $html-font-size) + rem; 
+    @return $remValue;  
 }
 
+/* Background paper ripped-effect*/
 @mixin ripped-effect($rhythm, $depth) {
   $tip: calc(100% - #{$depth});
   $ripped: '100% 0, 100% #{$tip}, ';
