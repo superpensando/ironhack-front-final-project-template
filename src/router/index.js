@@ -1,25 +1,25 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-const routes = [ 
+const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import(/* webpackChunkName: 'index' */ '../pages/Login.vue'),
+    component: () => import('../pages/Login.vue'),
   },
   {
     path: '/register',
     name: 'register',
-    component: () => import(/* webpackChunkName: 'index' */ '../pages/Register.vue'),
+    component: () => import('../pages/Register.vue'),
   },
   {
     path: '/dashboard',
     name: 'dashbaord',
-    component: () => import(/* webpackChunkName: 'index' */ '../pages/Dashboard.vue'),
+    component: () => import('../pages/Dashboard.vue'),
   },
   {
     path: '/newtask',
     name: 'newtask',
-    component: () => import(/* webpackChunkName: 'index' */ '../pages/NewTask.vue'),
+    component: () => import('../pages/NewTask.vue'),
   },
 ];
 
