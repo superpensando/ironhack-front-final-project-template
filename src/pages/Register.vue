@@ -2,7 +2,7 @@
   <div class="wrapper-auth">
     <h2 class="title-main">Register</h2>
     <form class="form-auth" @submit.prevent="submit">
-      <fieldset class="auth__fieldset">
+      <fieldset class="form-auth__fieldset">
         <input
           class="form-auth__element"
           v-model="email"
@@ -16,7 +16,7 @@
           {{ msgForm.email }}
         </p>
       </fieldset>
-      <fieldset class="auth__fieldset">
+      <fieldset class="form-auth__fieldset">
         <input
           v-model="password"
           class="form-auth__element"
@@ -30,7 +30,7 @@
           {{ msgForm.password }}
         </p>
       </fieldset>
-      <fieldset class="auth__fieldset">
+      <fieldset class="form-auth__fieldset">
         <input
           v-model="confirmPassword"
           class="form-auth__element"
