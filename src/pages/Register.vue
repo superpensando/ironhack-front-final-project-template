@@ -50,7 +50,7 @@
       {{ msgErrors[0].message }}
     </div>
 
-    <router-link class="auth__link" :to="'/'">Click to LogIn</router-link>
+    <router-link class="link-auth" :to="'/'">Click to LogIn</router-link>
   </div>
   <div class="wrapper__auth">
     <div v-if="msgInfo.length > 0">

@@ -36,7 +36,7 @@
     <div v-if="msgErrors.length > 0" class="bbdd__messages error">
       {{ msgErrors[0].message }}
     </div>
-    <router-link class="auth__link" :to="'/register/'"
+    <router-link class="link-auth" :to="'/register/'"
       >Click to Register</router-link
     >
   </div>

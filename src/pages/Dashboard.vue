@@ -5,7 +5,7 @@
       <article class="wrapper-paper wrapper__tasks-status isUncomplete">
         <h3 class="subtitle-main">
           <span>TODO!</span>
-          <router-link class="tasks__link" :to="'/newtask'">
+          <router-link class="link-tasks" :to="'/newtask'">
             New Task!
           </router-link>
         </h3>
