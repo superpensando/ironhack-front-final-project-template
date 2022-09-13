@@ -2,7 +2,7 @@
   <div class="task">
     <template v-if="!isEdit">
       <h4 class="task__title">
-        <i class="fa-regular fa-square-check" @click="updateStatusTask"></i> -
+        <i class="task__title-icon fa-regular fa-square-check" @click="updateStatusTask"></i> -
         {{ title }}
       </h4>
     </template>
@@ -25,8 +25,8 @@
 
     <div class="task__actions">
       <template v-if="isComplete">
-        <i class="fa-regular fa-pen-to-square" @click="isEdit=!isEdit"></i>
-        <i class="fa-regular fa-trash-can" @click="deleteTask"></i>
+        <i class="task__actions-icon fa-regular fa-pen-to-square" @click="isEdit=!isEdit"></i>
+        <i class="task__actions-icon fa-regular fa-trash-can" @click="deleteTask"></i>
       </template>
     </div>
   </div>

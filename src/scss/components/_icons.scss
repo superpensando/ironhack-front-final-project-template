@@ -1,4 +1,5 @@
-.fa-solid, .fa-regular {
+/* Icons */
+[class*='icon'] {
     color:var(--color-brand-primary);
     font-size:toRem(28);
     padding:toRem(5) toRem(10);

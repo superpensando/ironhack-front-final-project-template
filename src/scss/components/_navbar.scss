@@ -21,7 +21,7 @@
     &:hover {
         text-decoration:none; 
     }
-    .fa-solid {
+    [class*='icon'] {
         color:var(--color-brand-secondary);
     }
     &:visited {

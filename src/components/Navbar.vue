@@ -11,14 +11,14 @@
           type="button"
           @click="signOut"
         >
-          {{ pageLink }} <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          {{ pageLink }} <i class="navbar__icon fa-solid fa-arrow-right-from-bracket"></i>
         </button>
         <router-link
           v-if="pageTitle == 'New Task'"
           class="navbar__link"
           :to="'/dashboard'"
         >
-          {{ pageLink }} <i class="fa-solid fa-angles-left"></i
+          {{ pageLink }} <i class="navbar__icon fa-solid fa-angles-left"></i
         ></router-link>
       </li>
     </ul>
