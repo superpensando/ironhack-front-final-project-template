@@ -3,14 +3,14 @@
     <Navbar :pageTitle="pageTitle" :pageLink="pageLink" />
     <div class="wrapper-paper">
       <form
-        class="tasks__form tasks__form-newTask"
+        class="form-tasks form-tasks-newTask"
         @submit.prevent="submitTask"
       >
-        <fieldset class="tasks__form-fieldset">
-          <i class="tasks__form-element-icon fa-solid fa-quote-left"></i>
+        <fieldset class="form-tasks__fieldset">
+          <i class="form-tasks__element-icon fa-solid fa-quote-left"></i>
           <input
             v-model="taskTitle"
-            class="tasks__form-element"
+            class="form-tasks__element"
             type="text"
             name="taskTitle"
             id="taskTitle"
@@ -18,7 +18,7 @@
             required
           />
         </fieldset>
-        <button class="button-tasks__form" type="submit">Add</button>
+        <button class="button-form-tasks" type="submit">Add</button>
       </form>
       <div v-if="msgErrors.length > 0" class="bbdd__messages error">
         {{ msgErrors[0].message }} <br />

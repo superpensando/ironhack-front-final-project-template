@@ -7,12 +7,12 @@
       </h4>
     </template>
     <template v-if="isEdit">
-      <form class="tasks__form" @submit.prevent="editTask">
-        <fieldset class="tasks__form-fieldset">
-          <i class="tasks__form-element-icon fa-solid fa-quote-left"></i>
+      <form class="form-tasks" @submit.prevent="editTask">
+        <fieldset class="form-tasks__fieldset">
+          <i class="form-tasks__element-icon fa-solid fa-quote-left"></i>
           <input
             v-model="taskTitle"
-            class="tasks__form-element"
+            class="form-tasks__element"
             type="text"
             name="taskTitle"
             id="taskTitle"

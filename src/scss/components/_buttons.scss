@@ -1,7 +1,7 @@
 /*Buttons*/
 
 /*Buttons Auth*/
-.button-auth__form {
+.button-form-auth {
     border-radius: var(--border-radius-primary);
     border:none;
     background-color: var(--color-brand-primary);
@@ -11,7 +11,7 @@
     cursor: pointer;
 }
 /*Buttons Tasks*/
-.button-tasks__form {
+.button-form-tasks {
     border-radius: var(--border-radius-primary);
     border:none;
     background-color: var(--color-brand-primary);

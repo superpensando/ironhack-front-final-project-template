@@ -1,10 +1,10 @@
 <template>
   <div class="wrapper__auth">
     <h2 class="title__main">Log in</h2>
-    <form class="auth__form" @submit.prevent="submit">
+    <form class="form-auth" @submit.prevent="submit">
       <fieldset class="auth__fieldset">
         <input
-          class="auth__form-element"
+          class="form-auth__element"
           v-model="email"
           type="email"
           name="email"
@@ -12,26 +12,26 @@
           placeholder="Email"
           required
         />
-        <p class="auth__form-messages error" v-if="msgForm.email">
+        <p class="form-auth-messages error" v-if="msgForm.email">
           {{ msgForm.email }}
         </p>
       </fieldset>
       <fieldset class="auth__fieldset">
         <input
           v-model="password"
-          class="auth__form-element"
+          class="form-auth__element"
           type="password"
           name="password"
           id="password"
           placeholder="Password"
           required
         />
-        <p class="auth__form-messages error" v-if="msgForm.password">
+        <p class="form-auth-messages error" v-if="msgForm.password">
           {{ msgForm.password }}
         </p>
       </fieldset>
 
-      <button class="button-auth__form" type="submit">Submit</button>
+      <button class="button-form-auth" type="submit">Submit</button>
     </form>
     <div v-if="msgErrors.length > 0" class="bbdd__messages error">
       {{ msgErrors[0].message }}
