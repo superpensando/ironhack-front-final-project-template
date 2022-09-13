@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper__auth">
-    <h2 class="title__main">Log in</h2>
+    <h2 class="title-main">Log in</h2>
     <form class="form-auth" @submit.prevent="submit">
       <fieldset class="auth__fieldset">
         <input

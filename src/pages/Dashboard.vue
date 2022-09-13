@@ -3,7 +3,7 @@
     <Navbar :pageTitle="pageTitle" :pageLink="pageLink" />
     <section class="wrapper__tasks">
       <article class="wrapper-paper wrapper__tasks-status isUncomplete">
-        <h3 class="subtitle__main">
+        <h3 class="subtitle-main">
           <span>TODO!</span>
           <router-link class="tasks__link" :to="'/newtask'">
             New Task!
@@ -24,7 +24,7 @@
       </article>
 
       <article class="wrapper-paper wrapper__tasks-status isComplete">
-        <h3 class="subtitle__main">DONE!</h3>
+        <h3 class="subtitle-main">DONE!</h3>
         <div class="wrapper-paper-task">
           <Task
             v-for="task in tasksList.filter((x) => x.is_complete === true)"

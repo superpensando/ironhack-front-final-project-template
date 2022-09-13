@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper__auth">
-    <h2 class="title__main">Register</h2>
+    <h2 class="title-main">Register</h2>
     <form class="form-auth" @submit.prevent="submit">
       <fieldset class="auth__fieldset">
         <input
@@ -54,7 +54,7 @@
   </div>
   <div class="wrapper__auth">
     <div v-if="msgInfo.length > 0">
-      <h3 class="subtitle__main">{{ msgInfo[0].title }}</h3>
+      <h3 class="subtitle-main">{{ msgInfo[0].title }}</h3>
       <p>{{ msgInfo[0].body }}</p>
     </div>
   </div>
