@@ -20,7 +20,7 @@
         </fieldset>
         <button class="button-tasks__form" type="submit">Add</button>
       </form>
-      <div v-if="msgErrors.length > 0" class="bbdd__messages error">
+      <div v-if="msgErrors.length > 0" class="messages-bbdd error">
         {{ msgErrors[0].message }} <br />
         {{ msgErrors[0].status }}
       </div>

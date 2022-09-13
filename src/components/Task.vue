@@ -30,7 +30,7 @@
       </template>
     </div>
   </div>
-  <div v-if="msgErrors.length > 0" class="bbdd__messages error">
+  <div v-if="msgErrors.length > 0" class="messages-bbdd error">
     {{ msgErrors[0].message }} {{ msgErrors[0].status }}
   </div>
 </template>

@@ -1,4 +1,6 @@
-.form-auth-messages {
+/* Messages */
+/* Messages Form Auth*/
+.messages__form-auth {
     color:var(--color-error-primary);
     font-size:toRem(14);
     padding:0 toRem(10);
@@ -8,8 +10,8 @@
     }
 
 }
-.bbdd__messages {
-    
+/* Messages bbdd*/
+.messages-bbdd {
     font-size:toRem(12);
     padding:toRem(10);
     margin:toRem(20) 0;

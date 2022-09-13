@@ -12,7 +12,7 @@
           placeholder="Email"
           required
         />
-        <p class="form-auth-messages error" v-if="msgForm.email">
+        <p class="messages__form-auth error" v-if="msgForm.email">
           {{ msgForm.email }}
         </p>
       </fieldset>
@@ -26,14 +26,14 @@
           placeholder="Password"
           required
         />
-        <p class="form-auth-messages error" v-if="msgForm.password">
+        <p class="messages__form-auth error" v-if="msgForm.password">
           {{ msgForm.password }}
         </p>
       </fieldset>
 
       <button class="button-auth__form" type="submit">Submit</button>
     </form>
-    <div v-if="msgErrors.length > 0" class="bbdd__messages error">
+    <div v-if="msgErrors.length > 0" class="messages-bbdd error">
       {{ msgErrors[0].message }}
     </div>
     <router-link class="link-auth" :to="'/register/'"
