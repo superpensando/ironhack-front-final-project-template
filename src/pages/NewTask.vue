@@ -14,6 +14,7 @@
             type="text"
             name="taskTitle"
             id="taskTitle"
+            ref="taskTitle"
             placeholder="Task Title...."
             required
           />
@@ -48,6 +49,9 @@ export default {
     };
   },
   methods: {
+    setFocus() {
+      this.$refs.taskTitle.focus();
+    },
     async submitTask() {
       if (this.taskTitle) {
         try {
@@ -59,6 +63,10 @@ export default {
       }
     },
   },
+  mounted: function () {
+    this.setFocus();
+  },
+
 };
 </script>
 

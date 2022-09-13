@@ -20,6 +20,7 @@
     font-size: toRem(20);
     outline: none;
     border: 1px solid var(--color-background-primary);
+
     &:hover,
     &:active,
     &:focus {
@@ -37,21 +38,24 @@
 .form-tasks {
     display: inline-flex;
     justify-content: space-between;
-    align-items:  center;
-    width:80%;
+    align-items: center;
+    width: 80%;
+
     &.form-tasks--newTask {
-        width:100%;
-    } 
+        width: 100%;
+    }
 }
+
 .form-tasks__fieldset {
     position: relative;
     width: 100%;
 }
+
 .form-tasks__element {
     border: none;
     width: 100%;
-    height:toRem(38);
-    padding: 0 toRem(20) 0 toRem(44);
+    height: toRem(38);
+    padding: 0 toRem(20) 0 toRem(57);
     background-color: transparent;
     outline: none;
     font-size: toRem(20);
@@ -62,13 +66,14 @@
     &::-webkit-input-placeholder {
         color: var(--color-text-secondary);
         font-weight: 400;
-        font-style: italic;
     }
 
 }
+
+
 .form-tasks__element-icon {
-  position:absolute;
-  top:0;
-  left:toRem(2);
+    position: absolute;
+    top: 0;
+    left: toRem(2);
 
 }
