@@ -4,22 +4,22 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import('../pages/Login.vue'),
+    component: () => import('./../pages/Login.vue'),
   },
   {
     path: '/register',
     name: 'register',
-    component: () => import('../pages/Register.vue'),
+    component: () => import('./../pages/Register.vue'),
   },
   {
     path: '/dashboard',
     name: 'dashbaord',
-    component: () => import('../pages/Dashboard.vue'),
+    component: () => import('./../pages/Dashboard.vue'),
   },
   {
     path: '/newtask',
     name: 'newtask',
-    component: () => import('../pages/NewTask.vue'),
+    component: () => import('./../pages/NewTask.vue'),
   },
 ];
 
