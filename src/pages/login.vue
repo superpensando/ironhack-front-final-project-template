@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper__auth">
+  <div class="wrapper-auth">
     <h2 class="title-main">Log in</h2>
     <form class="form-auth" @submit.prevent="submit">
       <fieldset class="auth__fieldset">
@@ -40,7 +40,7 @@
       >Click to Register</router-link
     >
   </div>
-  <div class="wrapper__auth">
+  <div class="wrapper-auth">
     <div class="button-exp__group">
       <button
         @click="setTheme('forest')"
