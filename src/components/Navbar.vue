@@ -22,12 +22,42 @@
         ></router-link>
       </li>
     </ul>
+    <div class="button-exp__group">
+      <button
+        @click="setTheme('forest')"
+        class="button-exp forest"
+        id="forest"
+        type="text"
+      >
+        Forest
+      </button>
+      <button
+        @click="setTheme('ocean')"
+        class="button-exp ocean"
+        id="ocean"
+        type="text"
+      >
+        Ocean
+      </button>
+      <button
+        @click="setTheme('spring')"
+        class="button-exp spring"
+        id="spring"
+        type="text"
+      >
+        Spring
+      </button>
+    </div>
   </nav>
   <p class="wrapper-main-user">{{ this.userStore.user.email }}</p>
+  <div v-if="msgErrors.length > 0" class="messages-bbdd error">
+      {{ msgErrors[0].message }}
+    </div>
 </template>
 
 <script>
 import { useUserStore } from "../store/user.js";
+import { useThemingStore } from "../store/theming.js";
 import { useRouter } from "vue-router";
 
 export default {
@@ -41,16 +71,28 @@ export default {
       msgErrors: [],
       router: useRouter(),
       userStore: useUserStore(),
+      themingStore: useThemingStore(),
     };
   },
   methods: {
+    setTheme(theme) {
+      const el = document.getElementsByTagName("html")[0];
+      el.classList.replace(el.classList, theme);
+      this.editTheme(theme); 
+    },
+    async editTheme(theme) {
+      try {
+        await this.themingStore.editTheming(this.userStore.user.id,theme, theme);
+      } catch (e) {
+        this.msgErrors.push(e);
+      }
+    },
     async signOut() {
       try {
         this.router.push({ path: "/" });
         this.userStore.signOut();
       } catch (e) {
         this.msgErrors.push(e);
-        //console.log(this.msgErrors);
       }
     },
   },
