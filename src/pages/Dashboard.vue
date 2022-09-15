@@ -37,6 +37,9 @@
         </div>
       </article>
     </section>
+    <div v-if="msgErrors.length > 0" class="messages-bbdd error">
+      {{ msgErrors[0].message }}
+    </div>
   </div>
 </template>
 
@@ -68,7 +71,7 @@ export default {
         this.tasksList = this.taskStore.tasks;
         //console.log(this.taskStore.tasks);
       } catch (e) {
-        //errorMsg.value = e.message;
+        this.msgErrors.push(e);
       }
     },
     handleChildUpdateStatusTask() {
