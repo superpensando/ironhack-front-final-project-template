@@ -1,38 +1,50 @@
 <template>
-  <div class="task">
-    <template v-if="!isEdit">
-      <h4 class="task__title">
-        <i class="task__title-icon fa-regular fa-square-check" @click="updateStatusTask"></i> -
-        {{ title }}
-      </h4>
-    </template>
-    <template v-if="isEdit">
-      <form class="form-tasks" @submit.prevent="editTask">
-        <fieldset class="form-tasks__fieldset">
-          <i class="form-tasks__element-icon fa-solid fa-quote-left"></i>
-          <input
-            v-model="taskTitle"
-            class="form-tasks__element"
-            type="text"
-            name="taskTitle"
-            id="taskTitle"
-            ref="taskTitle"
-            placeholder="Task Title...."
-            required
-          />
-        </fieldset>
-      </form>
-    </template>
-
-    <div class="task__actions">
-      <template v-if="isComplete">
-        <i class="task__actions-icon fa-regular fa-pen-to-square" @click="showEdit"></i>
-        <i class="task__actions-icon fa-regular fa-trash-can" @click="deleteTask"></i>
+  <div>
+    <div class="task">
+      <template v-if="!isEdit">
+        <h4 class="task__title">
+          <i
+            class="task__title-icon fa-regular fa-square-check"
+            @click="updateStatusTask"
+          ></i>
+          -
+          {{ title }}
+        </h4>
       </template>
+      <template v-if="isEdit">
+        <form class="form-tasks" @submit.prevent="editTask">
+          <fieldset class="form-tasks__fieldset">
+            <i class="form-tasks__element-icon fa-solid fa-quote-left"></i>
+            <input
+              v-model="taskTitle"
+              class="form-tasks__element"
+              type="text"
+              name="taskTitle"
+              id="taskTitle"
+              ref="taskTitle"
+              placeholder="Task Title...."
+              required
+            />
+          </fieldset>
+        </form>
+      </template>
+
+      <div class="task__actions">
+        <template v-if="isComplete">
+          <i
+            class="task__actions-icon fa-regular fa-pen-to-square"
+            @click="showEdit"
+          ></i>
+          <i
+            class="task__actions-icon fa-regular fa-trash-can"
+            @click="deleteTask"
+          ></i>
+        </template>
+      </div>
     </div>
-  </div>
-  <div v-if="msgErrors.length > 0" class="messages-bbdd error">
-    {{ msgErrors[0].message }} {{ msgErrors[0].status }}
+    <div v-if="msgErrors.length > 0" class="messages-bbdd error">
+      {{ msgErrors[0].message }}
+    </div>
   </div>
 </template>
 
@@ -58,8 +70,8 @@ export default {
     };
   },
   methods: {
-    showEdit(){
-      this.isEdit=!this.isEdit;
+    showEdit() {
+      this.isEdit = !this.isEdit;
       //if (this.isEdit) {this.$refs.taskTitle.focus()}
     },
     async updateStatusTask() {
@@ -72,9 +84,9 @@ export default {
     },
     async editTask() {
       try {
-        await this.taskStore.editTask(this.idTask,this.taskTitle);
-        this.isEdit=false;
-        this.$emit("editTask"); 
+        await this.taskStore.editTask(this.idTask, this.taskTitle);
+        this.isEdit = false;
+        this.$emit("editTask");
       } catch (e) {
         this.msgErrors.push(e);
       }
