@@ -70,9 +70,12 @@ export default {
     };
   },
   methods: {
+    setFocus() {
+      this.$refs.taskTitle.focus();
+    },
     showEdit() {
       this.isEdit = !this.isEdit;
-      //if (this.isEdit) {this.$refs.taskTitle.focus()}
+      if (this.isEdit) {setTimeout( this.setFocus, 1000);}
     },
     async updateStatusTask() {
       try {
