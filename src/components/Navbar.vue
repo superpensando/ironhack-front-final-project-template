@@ -91,7 +91,7 @@ export default {
     },
     async editTheme(theme) {
       try {
-        await this.themingStore.editTheming(this.userStore.user.id,theme, theme);
+        await this.themingStore.editTheming(this.userStore.user.id,theme);
       } catch (e) {
         this.msgErrors.push(e);
       }
