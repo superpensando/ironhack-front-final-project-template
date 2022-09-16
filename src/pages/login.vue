@@ -66,10 +66,6 @@ export default {
     },
   },
   methods: {
-    setTheme(theme) {
-      const el = document.getElementsByTagName("html")[0];
-      el.classList.replace(el.classList, theme);
-    },
     validateEmail(value) {
       if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
         this.msgForm["email"] = "";
