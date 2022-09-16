@@ -49,7 +49,6 @@ import Task from "../components/Task.vue";
 
 import { useUserStore } from "../store/user.js";
 import { useTaskStore } from "../store/task.js";
-import { useThemingStore } from "../store/theming.js";
 import { useRouter } from "vue-router";
 
 export default {
@@ -62,25 +61,10 @@ export default {
       router: useRouter(),
       userStore: useUserStore(),
       taskStore: useTaskStore(),
-      themingStore: useThemingStore(),
       tasksList: [],
-      theme:[],
     };
   },
   methods: {
-    setTheme(theme) {
-      const el = document.getElementsByTagName("html")[0];
-      el.classList.replace(el.classList, theme);
-    },
-    async getTheming() {
-      try {
-        await this.themingStore.fetchTheming(this.userStore.user.id);
-        this.theme = this.themingStore.theming[0].theme;
-        this.setTheme(this.theme);
-      } catch (e) {
-        this.msgErrors.push(e);
-      }
-    },
     async getTasks() {
       try {
         await this.taskStore.fetchTasks();
@@ -102,7 +86,6 @@ export default {
   },
   mounted: function () {
     this.getTasks();
-    this.getTheming();
   },
 };
 </script>

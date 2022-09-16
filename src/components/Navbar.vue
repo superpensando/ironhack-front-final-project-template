@@ -75,6 +75,15 @@ export default {
     };
   },
   methods: {
+    async getTheming() {
+      try {
+        await this.themingStore.fetchTheming(this.userStore.user.id);
+        this.theme = this.themingStore.theming[0].theme;
+        this.setTheme(this.theme);
+      } catch (e) {
+        this.msgErrors.push(e);
+      }
+    },
     setTheme(theme) {
       const el = document.getElementsByTagName("html")[0];
       el.classList.replace(el.classList, theme);
@@ -95,6 +104,9 @@ export default {
         this.msgErrors.push(e);
       }
     },
+  },
+  mounted: function () {
+    this.getTheming();
   },
 };
 </script>
