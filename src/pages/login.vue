@@ -40,34 +40,6 @@
       >Click to Register</router-link
     >
   </div>
-  <div class="wrapper-auth">
-    <div class="button-exp__group">
-      <button
-        @click="setTheme('forest')"
-        class="button-exp forest"
-        id="forest"
-        type="text"
-      >
-        Forest
-      </button>
-      <button
-        @click="setTheme('ocean')"
-        class="button-exp ocean"
-        id="ocean"
-        type="text"
-      >
-        Ocean
-      </button>
-      <button
-        @click="setTheme('spring')"
-        class="button-exp spring"
-        id="spring"
-        type="text"
-      >
-        Spring
-      </button>
-    </div>
-  </div>
 </template>
 
 <script>
