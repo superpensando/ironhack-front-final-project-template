@@ -62,6 +62,7 @@
 
 <script>
 import { useUserStore } from "../store/user.js";
+import { useThemingStore } from "../store/theming.js";
 import { useRouter } from "vue-router";
 
 export default {
@@ -75,6 +76,7 @@ export default {
       msgForm: [],
       router: useRouter(),
       userStore: useUserStore(),
+      themingStore: useThemingStore(),
       validateFormEmail: false,
       validateFormPassword: false,
     };
@@ -134,6 +136,7 @@ export default {
             title: "You have registered!",
             body: "To complete the process, you will have received a confirmation email. Please accept the email.",
           });
+          await this.themingStore.insertTheme(this.userStore.user.id, "forest" );
           setTimeout(() => {
             this.router.push({ path: "/" });
           }, 5000);
