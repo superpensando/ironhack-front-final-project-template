@@ -79,15 +79,18 @@ export default {
       try {
         await this.themingStore.fetchTheming(this.userStore.user.id);
         this.theme = this.themingStore.theming[0].theme;
-        this.setTheme(this.theme);
+        this.setThemeHTML(this.theme);
       } catch (e) {
         this.msgErrors.push(e);
       }
     },
-    setTheme(theme) {
+    setThemeHTML(theme) {
       const el = document.getElementsByTagName("html")[0];
       el.classList.replace(el.classList, theme);
-      this.editTheme(theme); 
+    },
+    setTheme(theme) {
+      this.editTheme(theme);
+      this.setThemeHTML(theme);
     },
     async editTheme(theme) {
       try {
@@ -100,6 +103,7 @@ export default {
       try {
         this.router.push({ path: "/" });
         this.userStore.signOut();
+        this.setThemeHTML("forest");
       } catch (e) {
         this.msgErrors.push(e);
       }
